@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="342.0" prefWidth="417.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.room.RoomFormController">
+   <children>
+      <JFXButton layoutX="279.0" layoutY="35.0" onAction="#btnAddNewRoomOnAction" style="-fx-background-color: #8e44ad;" text="+ Add New Room" textFill="WHITE" />
+   </children>
+</AnchorPane>

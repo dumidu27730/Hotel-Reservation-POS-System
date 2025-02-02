@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="541.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.room.AddNewRoomFormController">
+   <children>
+      <TextField fx:id="txtRoomNumber" layoutX="65.0" layoutY="109.0" prefHeight="25.0" prefWidth="78.0" />
+      <Text layoutX="65.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Number" />
+      <Text layoutX="227.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Type" />
+      <Text layoutX="391.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price Per Night" />
+      <ComboBox fx:id="cmbRoomType" editable="true" layoutX="189.0" layoutY="109.0" prefWidth="150.0" />
+      <TextField fx:id="txtPricePerNight" layoutX="386.0" layoutY="109.0" prefHeight="25.0" prefWidth="91.0" />
+      <TextArea fx:id="txtDescription" layoutX="78.0" layoutY="210.0" prefHeight="62.0" prefWidth="239.0" />
+      <Text layoutX="62.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
+      <ComboBox fx:id="txtAvailableStatus" layoutX="353.0" layoutY="229.0" prefWidth="150.0" />
+      <Text layoutX="365.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Available Status" />
+      <JFXButton layoutX="96.0" layoutY="334.0" onAction="#btnCancelOnAction" style="-fx-background-color: #8e44ad;" text="Cancel" textFill="WHITE" />
+      <JFXButton layoutX="401.0" layoutY="334.0" onAction="#btnSaveOnAction" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #8e44ad;" text="Save" textFill="WHITE" />
+   </children>
+</AnchorPane>

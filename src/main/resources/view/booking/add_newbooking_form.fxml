@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.booking.AddNewBookingFormController">
+   <children>
+      <DatePicker fx:id="dateCheckIn" layoutX="310.0" layoutY="252.0" prefHeight="25.0" prefWidth="142.0" />
+      <DatePicker fx:id="dateCheckOut" layoutX="10.0" layoutY="252.0" prefHeight="25.0" prefWidth="142.0" />
+      <TextField fx:id="txtDay" layoutX="496.0" layoutY="252.0" prefHeight="25.0" prefWidth="74.0" />
+      <Text layoutX="45.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check in" />
+      <Text layoutX="328.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check out" />
+      <Text layoutX="224.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day" />
+      <ComboBox fx:id="cmbRoomType" layoutX="11.0" layoutY="310.0" prefHeight="25.0" prefWidth="128.0" />
+      <Text layoutX="15.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Type" wrappingWidth="60.287109375" />
+      <ComboBox fx:id="cmbRoom" layoutX="367.0" layoutY="310.0" prefHeight="25.0" prefWidth="122.0" />
+      <Text layoutX="203.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room" />
+      <TextField fx:id="txtGuestQty" layoutX="210.0" layoutY="252.0" prefHeight="25.0" prefWidth="60.0" />
+      <Text layoutX="500.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guest QTY" />
+      <Text layoutX="14.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+      <Text layoutX="314.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+      <Text layoutX="314.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" />
+      <Text layoutX="407.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
+      <Text layoutX="237.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC Number" />
+      <Text layoutX="14.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guest Comment/Request" />
+      <TextField fx:id="txtName" layoutX="14.0" layoutY="94.0" prefHeight="25.0" prefWidth="174.0" />
+      <TextField fx:id="txtNICNUmber" layoutX="219.0" layoutY="94.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="txtPhoneNumber" layoutX="398.0" layoutY="187.0" prefHeight="25.0" prefWidth="182.0" />
+      <TextField fx:id="txtAddress" layoutX="397.0" layoutY="94.0" prefHeight="16.0" prefWidth="174.0" />
+      <TextArea fx:id="txtGuestComment" layoutX="14.0" layoutY="145.0" prefHeight="61.0" prefWidth="284.0" />
+      <TextField fx:id="txtEmail" layoutX="397.0" layoutY="145.0" prefHeight="25.0" prefWidth="174.0" />
+      <TextField fx:id="txtSearchByPhoneNumber" layoutX="14.0" layoutY="27.0" prefHeight="25.0" prefWidth="174.0" promptText="Search by phonenumber" />
+      <JFXButton layoutX="209.0" layoutY="27.0" onAction="#btnSearchByPhoneNumberOnAction" text="Search" />
+      <JFXButton layoutX="485.0" layoutY="361.0" onAction="#btnAddBookingOnAction" style="-fx-background-color: #8e44ad;" text="Add Booking" textFill="WHITE" />
+      <JFXButton layoutX="355.0" layoutY="361.0" onAction="#btnCancelOnAction" style="-fx-background-color: #8e44ad;" text="Cancel" textFill="WHITE" />
+      <ComboBox fx:id="cmbReservationStatus" layoutX="200.0" layoutY="310.0" prefHeight="25.0" prefWidth="122.0" />
+      <Text layoutX="368.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation Status" wrappingWidth="97.423828125" />
+   </children>
+</AnchorPane>
