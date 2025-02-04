@@ -74,8 +74,8 @@ public class AddNewRoomFormController implements Initializable {
         Room room = new Room(
                 txtRoomNumber.getText(),
                 cmbRoomType.getValue().toString(),
-                Float.parseFloat(txtPricePerNight.getText()),
                 txtDescription.getText(),
+                Float.parseFloat(txtPricePerNight.getText()),
                 txtAvailableStatus.getValue().toString()
         );
 

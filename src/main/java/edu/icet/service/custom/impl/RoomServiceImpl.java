@@ -27,8 +27,7 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public ObservableList<Room> getAll() {
-        List<Room> roomList = new RoomDaoImpl().getAll(); // Fetch data from DAO
-        return FXCollections.observableArrayList(roomList); // Convert to ObservableList and return
+     return null;
     }
 
 

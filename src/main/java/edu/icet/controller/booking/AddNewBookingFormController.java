@@ -110,11 +110,4 @@ public class AddNewBookingFormController implements Initializable {
         txtPhoneNumber.setText(newValue.getPhoneNumber());
     }
 
-    private void loadRoomType(){
-
-        Room room = service2.getAll();
-        cmbRoomType.add
-    }
-
-
 }
