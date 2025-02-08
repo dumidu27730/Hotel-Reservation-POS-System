@@ -27,7 +27,7 @@ public class LoginFormController {
     void btnSigninOnAction(ActionEvent event) throws IOException {
 
         Stage stage = new Stage();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../../../view/dashbord.fxml"))));
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../../../view/home.fxml"))));
         stage.show();
     }
 

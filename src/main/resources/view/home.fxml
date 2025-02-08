@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="509.0" prefWidth="992.0" style="-fx-background-color: F4ECF7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.HomeFormController">
+   <children>
+      <AnchorPane fx:id="loadFormContent" layoutX="199.0" layoutY="49.0" prefHeight="420.0" prefWidth="760.0" />
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#8e44ad" height="509.0" layoutX="-15.0" smooth="false" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="187.0" />
+      <JFXButton layoutX="30.0" layoutY="270.0" onAction="#btnShowUserFormOnAction" prefHeight="29.0" prefWidth="106.0" text="User" textFill="#fffefe">
+         <font>
+            <Font name="Trebuchet MS" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="40.0" layoutY="143.0" onAction="#btnShowBookingFormOnAction" prefHeight="29.0" prefWidth="86.0" text="Booking" textFill="#fffefe">
+         <font>
+            <Font name="Trebuchet MS" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="36.0" layoutY="365.0" onAction="#btnShowEmployeeFormOnAction" prefHeight="29.0" prefWidth="86.0" text="Employee" textFill="#fffefe">
+         <font>
+            <Font name="Trebuchet MS" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="36.0" layoutY="316.0" onAction="#btnShowReportFormOnAction" prefHeight="29.0" prefWidth="86.0" text="Report" textFill="#fffefe">
+         <font>
+            <Font name="Trebuchet MS" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="35.0" layoutY="86.0" onAction="#btnShowDashboardFormOnAction" prefHeight="29.0" prefWidth="96.0" text="Dashboard" textFill="#fffefe">
+         <font>
+            <Font name="Trebuchet MS" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="36.0" layoutY="187.0" onAction="#btnShowGuestFormOnAction" prefHeight="29.0" prefWidth="86.0" text="Guest" textFill="#fffefe">
+         <font>
+            <Font name="Trebuchet MS" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="31.0" layoutY="419.0" onAction="#btnLogoutOnAction" prefHeight="29.0" prefWidth="96.0" text="Log out" textFill="#fffefe">
+         <font>
+            <Font name="Trebuchet MS" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="40.0" layoutY="226.0" onAction="#btnShowRoomFormOnAction" prefHeight="29.0" prefWidth="86.0" text="Room" textFill="#fffefe">
+         <font>
+            <Font name="Trebuchet MS" size="15.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

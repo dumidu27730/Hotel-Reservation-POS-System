@@ -1,6 +1,7 @@
 package edu.icet.repository.custom.impl;
 
 import edu.icet.entity.GuestEntity;
+import edu.icet.entity.RoomEntity;
 import edu.icet.entity.UserEntity;
 import edu.icet.repository.custom.GuestDao;
 import edu.icet.util.CrudUtil;
@@ -9,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class GuestDaoImpl implements GuestDao {
@@ -41,7 +43,7 @@ public class GuestDaoImpl implements GuestDao {
             ResultSet resultSet = CrudUtil.execute(SQL, s);
             if (resultSet.next()) {
                 return new GuestEntity(
-                        resultSet.getString("guest_id"),
+                        resultSet.getInt("guest_id"),
                         resultSet.getString("name"),
                         resultSet.getString("nic_number"),
                         resultSet.getString("address"),
@@ -59,16 +61,52 @@ public class GuestDaoImpl implements GuestDao {
 
     @Override
     public boolean delete(String s) {
-        return false;
+        String SQL = "DELETE FROM rooms WHERE guest_id = ?";
+        try {
+            return CrudUtil.execute(SQL,s);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public boolean update(GuestEntity entity) {
-        return false;
+        String SQL = "UPDATE guests SET  name=? , nic_number=?, address =? , guest_request= ?,email=?,phone_number=? WHERE guest_id=? ";
+        try {
+            return CrudUtil.execute(SQL,
+                    entity.getName(),
+                    entity.getNicNumber(),
+                    entity.getAddress(),
+                    entity.getGuestRequest(),
+                    entity.getEmail(),
+                    entity.getPhoneNumber(),
+                    entity.getId()
+                    );
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public List<GuestEntity> getAll() {
-        return List.of();
+        List<GuestEntity> guetsList = new ArrayList<>();
+        try {
+            ResultSet resultSet = CrudUtil.execute("SELECT * FROM guests");
+            while (resultSet.next()) {
+                guetsList.add(new GuestEntity(
+                        resultSet.getInt(1),
+                        resultSet.getString(2),
+                        resultSet.getString(3),
+                        resultSet.getString(4),
+                        resultSet.getString(5),
+                        resultSet.getString(6),
+                        resultSet.getString(7),
+                        resultSet.getFloat(8)
+                ));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return guetsList;
     }
 }

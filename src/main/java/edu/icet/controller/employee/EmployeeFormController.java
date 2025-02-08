@@ -1,9 +1,11 @@
-package edu.icet.controller.guest;
+package edu.icet.controller.employee;
 
 import com.jfoenix.controls.JFXButton;
-import edu.icet.dto.Guest;
+import edu.icet.dto.Employee;
+import edu.icet.dto.Room;
 import edu.icet.service.ServiceFactory;
-import edu.icet.service.custom.GuestService;
+import edu.icet.service.custom.EmployeeService;
+import edu.icet.service.custom.RoomService;
 import edu.icet.util.ServiceType;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,7 +22,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class GuestFormController implements Initializable {
+public class EmployeeFormController implements Initializable {
 
     @FXML
     private JFXButton btnDelete;
@@ -35,16 +37,10 @@ public class GuestFormController implements Initializable {
     private TableColumn<?, ?> colAddress;
 
     @FXML
-    private TableColumn<?, ?> colEmail;
+    private TableColumn<?, ?> colEmpId;
 
     @FXML
-    private TableColumn<?, ?> colGuestId;
-
-    @FXML
-    private TableColumn<?, ?> colGuestRequest;
-
-    @FXML
-    private TableColumn<?, ?> colLoyaltyPoint;
+    private TableColumn<?, ?> colJobRole;
 
     @FXML
     private TableColumn<?, ?> colNICNumber;
@@ -56,22 +52,19 @@ public class GuestFormController implements Initializable {
     private TableColumn<?, ?> colPhoneNumber;
 
     @FXML
-    private TableView<Guest> tblGuests;
+    private TableColumn<?, ?> colSalary;
+
+    @FXML
+    private TableView<Employee> tblEmployees;
 
     @FXML
     private TextField txtAddress;
 
     @FXML
-    private TextField txtEmail;
+    private TextField txtEmployeeId;
 
     @FXML
-    private TextField txtGuestId;
-
-    @FXML
-    private TextField txtGuestRequest;
-
-    @FXML
-    private TextField txtLoyaltyPoint;
+    private TextField txtJobRole;
 
     @FXML
     private TextField txtNICNumber;
@@ -83,16 +76,18 @@ public class GuestFormController implements Initializable {
     private TextField txtPhoneNumber;
 
     @FXML
-    private TextField txtSerchByPhoneNumber;
-
-    GuestService service = ServiceFactory.getInstance().getServiceType(ServiceType.GUEST);
+    private TextField txtSalary;
 
     @FXML
-    void btnAddNewGuestOnAction(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../../../../view/guest/add_new_guest_form.fxml"))));
-        stage.show();
+    private TextField txtSerchByNICNumber;
 
+    EmployeeService service = ServiceFactory.getInstance().getServiceType(ServiceType.EMPLOYEE);
+
+    @FXML
+    void btnAddNewEmployeeOnAction(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../../../../view/employee/add_new_employee_form.fxml"))));
+        stage.show();
     }
 
     @FXML
@@ -102,12 +97,26 @@ public class GuestFormController implements Initializable {
 
     @FXML
     void btnSearchOnAction(ActionEvent event) {
-       Guest guest= service.searchGuest(txtSerchByPhoneNumber.getText());
-        if (guest != null) {
-            setTextToValues(guest);
+        Employee employee = service.searchEmployee(txtSerchByNICNumber.getText());
+        if (employee != null) {
+            setTextToValues(employee);
         } else {
-            new Alert(Alert.AlertType.WARNING, "Guest Not Found!").show();
+            new Alert(Alert.AlertType.WARNING, "Employee Not Found!").show();
         }
+    }
+    private void setTextToValues(Employee newValue) {
+        txtEmployeeId.setText(String.valueOf(newValue.getEmployeeId()));
+        txtJobRole.setText(newValue.getJobRole());
+        txtName.setText(newValue.getName());
+        txtNICNumber.setText(newValue.getNicNumber());
+        txtAddress.setText(newValue.getAddress());
+        txtPhoneNumber.setText(newValue.getPhoneNumber());
+        txtSalary.setText(String.valueOf(newValue.getSalary()));
+    }
+
+    private void loadTable(){
+        ObservableList<Employee> all = service.getAll();
+        tblEmployees.setItems(all);
     }
 
     @FXML
@@ -117,14 +126,14 @@ public class GuestFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        colGuestId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colEmpId.setCellValueFactory(new PropertyValueFactory<>("employeeId"));
+        colJobRole.setCellValueFactory(new PropertyValueFactory<>("jobRole"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colNICNumber.setCellValueFactory(new PropertyValueFactory<>("nicNumber"));
-        colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
-        colGuestRequest.setCellValueFactory(new PropertyValueFactory<>("guestRequest"));
-        colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("Address"));
         colPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
-        colLoyaltyPoint.setCellValueFactory(new PropertyValueFactory<>("loyalatyPoint"));
+        colSalary.setCellValueFactory(new PropertyValueFactory<>("salary"));
+
 
 
         colAction.setCellFactory(param -> new TableCell() {
@@ -139,39 +148,39 @@ public class GuestFormController implements Initializable {
 
                 btnUpdate.setOnAction(event -> {
 
-                    Guest guest = new Guest(
-                            Integer.parseInt(txtGuestId.getText()),
+
+                    Employee employee = new Employee(
+                            Integer.parseInt(txtEmployeeId.getText()),
+                            txtJobRole.getText(),
                             txtName.getText(),
                             txtNICNumber.getText(),
                             txtAddress.getText(),
-                            txtGuestRequest.getText(),
-                            txtEmail.getText(),
-                            txtPhoneNumber.getText()
+                            txtPhoneNumber.getText(),
+                            Float.parseFloat(txtSalary.getText())
                     );
-                    if (service.updateGuest(guest)){
-                        new Alert(Alert.AlertType.INFORMATION,"Guest Updated!!").show();
+                    if (service.updateEmployee(employee)){
+                        new Alert(Alert.AlertType.INFORMATION,"Employee Updated!!").show();
                         loadTable();
                     }else {
-                        new Alert(Alert.AlertType.ERROR,"Guest Not Updated!!").show();
+                        new Alert(Alert.AlertType.ERROR,"Employee Not Updated!!").show();
 
                     }
 
-
-                    Guest guest1 = (Guest) getTableView().getItems().get(getIndex());
-                    setTextToValues(guest);
+                    Employee employee1= (Employee) getTableView().getItems().get(getIndex());
+                    setTextToValues(employee);
 
                 });
 
                 // Delete Button Action (Remove customer from list)
                 btnDelete.setOnAction(event -> {
-                    Guest guest = (Guest) getTableView().getItems().get(getIndex());
-                    boolean isDeleted = service.deleteGuest(String.valueOf(guest.getId()));
+                    Employee employee = (Employee) getTableView().getItems().get(getIndex());
+                    boolean isDeleted = service.deleteEmployee(String.valueOf(employee.getEmployeeId()));
 
                     if (isDeleted) {
-                        new Alert(Alert.AlertType.INFORMATION, "Guest Deleted!").show();
+                        new Alert(Alert.AlertType.INFORMATION, "Employee Deleted!").show();
                         loadTable(); // Refresh table after deletion
                     } else {
-                        new Alert(Alert.AlertType.ERROR, "Failed to Guest Room!").show();
+                        new Alert(Alert.AlertType.ERROR, "Failed to Employee Room!").show();
                     }
                 });
             }
@@ -189,24 +198,10 @@ public class GuestFormController implements Initializable {
 
         loadTable();
 
-        tblGuests.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+        tblEmployees.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
-                setTextToValues((Guest) newValue);
+                setTextToValues((Employee) newValue);
             }
         });
-    }
-    private void setTextToValues(Guest newValue) {
-        txtGuestId.setText(String.valueOf(newValue.getId()));
-        txtName.setText(newValue.getName());
-        txtNICNumber.setText(newValue.getNicNumber());
-        txtAddress.setText(newValue.getAddress());
-        txtGuestRequest.setText(newValue.getGuestRequest());
-        txtEmail.setText(newValue.getEmail());
-        txtPhoneNumber.setText(newValue.getPhoneNumber());
-
-    }
-    private void loadTable(){
-        ObservableList<Guest> all = service.getAll();
-        tblGuests.setItems(all);
     }
 }

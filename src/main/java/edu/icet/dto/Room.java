@@ -17,4 +17,6 @@ public class Room {
     private String description;
     private Float pricePerNight;
     private String availableStatus;
+
+
 }

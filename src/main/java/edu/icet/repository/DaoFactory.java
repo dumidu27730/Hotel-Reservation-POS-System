@@ -1,9 +1,6 @@
 package edu.icet.repository;
 
-import edu.icet.repository.custom.impl.GuestDaoImpl;
-import edu.icet.repository.custom.impl.ReservationDaoImpl;
-import edu.icet.repository.custom.impl.RoomDaoImpl;
-import edu.icet.repository.custom.impl.UserDaoImpl;
+import edu.icet.repository.custom.impl.*;
 import edu.icet.util.DaoType;
 
 public class DaoFactory {
@@ -18,6 +15,7 @@ public class DaoFactory {
             case GUEST: return (T) new GuestDaoImpl();
             case ROOM: return (T) new RoomDaoImpl();
             case RESERVATION: return (T) new ReservationDaoImpl();
+            case EMPLOYEE: return (T) new EmployeeDaoImpl();
         }
         return null;
     }

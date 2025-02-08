@@ -2,10 +2,7 @@ package edu.icet.service;
 
 import edu.icet.repository.SuperDao;
 import edu.icet.repository.custom.impl.UserDaoImpl;
-import edu.icet.service.custom.impl.GuestServiceImpl;
-import edu.icet.service.custom.impl.ReservationServiceImpl;
-import edu.icet.service.custom.impl.RoomServiceImpl;
-import edu.icet.service.custom.impl.UserServiceImpl;
+import edu.icet.service.custom.impl.*;
 import edu.icet.util.ServiceType;
 
 public class ServiceFactory {
@@ -21,6 +18,7 @@ public class ServiceFactory {
             case GUEST:return (T) GuestServiceImpl.getInstance();
             case ROOM:return (T) RoomServiceImpl.getInstance();
             case RESERVATION: return (T) ReservationServiceImpl.getInstance();
+            case EMPLOYEE: return (T) EmployeeServiceImpl.getInstance();
 
         }
         return null;

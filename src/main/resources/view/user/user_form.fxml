@@ -2,16 +2,51 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="342.0" prefWidth="417.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.user.UserFormController">
+<AnchorPane prefHeight="420.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.user.UserFormController">
    <children>
-      <JFXButton layoutX="282.0" layoutY="33.0" onAction="#btnAddNewUserOnAction" style="-fx-background-color: #8e44ad;" text="+ Add New User" textFill="WHITE">
+      <JFXButton layoutX="630.0" layoutY="14.0" onAction="#btnAddNewUserOnAction" prefHeight="23.0" prefWidth="112.0" style="-fx-background-color: #8e44ad;" text="+ Add New User" textFill="WHITE">
          <font>
             <Font name="Segoe UI" size="12.0" />
          </font>
       </JFXButton>
+      <TextField fx:id="txtSerchById" layoutX="222.0" layoutY="13.0" prefHeight="25.0" prefWidth="212.0" promptText="Search here...." />
+      <Text layoutX="14.0" layoutY="37.0" opacity="0.74" strokeType="OUTSIDE" strokeWidth="0.0" text="Userś">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="443.0" layoutY="14.0" onAction="#btnSearchOnAction" prefHeight="23.0" prefWidth="54.0" style="-fx-background-color: #8e44ad;" text="Search" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tblUsers" layoutX="22.0" layoutY="137.0" prefHeight="240.0" prefWidth="720.0">
+        <columns>
+          <TableColumn fx:id="colNo" prefWidth="57.0" text="No" />
+          <TableColumn fx:id="colPosition" prefWidth="84.0" text="Position" />
+            <TableColumn fx:id="colName" prefWidth="102.0" text="Name" />
+            <TableColumn fx:id="colNICNumber" prefWidth="93.0" text="NIC Num" />
+            <TableColumn fx:id="colEmail" prefWidth="96.0" text="Email" />
+            <TableColumn fx:id="colUserName" prefWidth="82.0" text="User Name" />
+            <TableColumn fx:id="colPhoneNumber" prefWidth="79.0" text="Phone Num" />
+            <TableColumn fx:id="colAction" prefWidth="126.0" text="Action" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="btnDelete" layoutX="569.0" layoutY="13.0" onAction="#btnDeleteOnAction" style="-fx-background-color: #8e44ad;" text="Delete" textFill="WHITE" />
+      <JFXButton fx:id="btnUpdate" layoutX="504.0" layoutY="13.0" onAction="#btnUpdateOnAction" style="-fx-background-color: #8e44ad;" text="Update" textFill="WHITE" />
+      <TextField fx:id="txtPosition" layoutX="14.0" layoutY="82.0" prefHeight="25.0" prefWidth="76.0" />
+      <TextField fx:id="txtName" layoutX="104.0" layoutY="82.0" prefHeight="25.0" prefWidth="135.0" />
+      <TextField fx:id="txtNICNumber" layoutX="253.0" layoutY="82.0" prefHeight="25.0" prefWidth="91.0" />
+      <TextField fx:id="txtPhoneNumber" layoutX="613.0" layoutY="82.0" prefHeight="25.0" prefWidth="85.0" />
+      <TextField fx:id="txtUserName" layoutX="490.0" layoutY="82.0" prefHeight="25.0" prefWidth="112.0" />
+      <TextField fx:id="txtEmail" layoutX="354.0" layoutY="82.0" prefHeight="25.0" prefWidth="129.0" />
    </children>
    <cursor>
       <Cursor fx:constant="DEFAULT" />

@@ -20,6 +20,16 @@ public class User {
     private String phoneNumber;
     private String password;
 
+    public User(int id,String cmbPosition, String name, String nicNumber, String email, String username, String phoneNumber) {
+         this.id=id;
+        this.cmbPosition = cmbPosition;
+        this.name = name;
+        this.nicNumber = nicNumber;
+        this.email = email;
+        this.username = username;
+        this.phoneNumber = phoneNumber;
+    }
+
     public User(String cmbPosition, String name, String nicNumber, String email, String username, String phoneNumber, String password) {
         this.cmbPosition = cmbPosition;
         this.name = name;
@@ -29,4 +39,7 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.password = password;
     }
+
+
+
 }
