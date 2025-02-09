@@ -8,40 +8,38 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="420.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.employee.EmployeeFormController">
+<AnchorPane prefHeight="500.0" prefWidth="900.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.employee.EmployeeFormController">
    <children>
-      <JFXButton layoutX="614.0" layoutY="23.0" onAction="#btnAddNewEmployeeOnAction" style="-fx-background-color: #8e44ad;" text="+ Add New Employee" textFill="WHITE" />
-      <TextField fx:id="txtSerchByNICNumber" layoutX="203.0" layoutY="23.0" prefHeight="25.0" prefWidth="212.0" promptText="Search here...." />
-      <Text layoutX="24.0" layoutY="47.0" opacity="0.74" strokeType="OUTSIDE" strokeWidth="0.0" text="Employeeś">
+      <JFXButton layoutX="753.0" layoutY="13.0" onAction="#btnAddNewEmployeeOnAction" style="-fx-background-color: #8e44ad;" text="+ Add New Employee" textFill="WHITE" />
+      <TextField fx:id="txtSerchByNICNumber" layoutX="468.0" layoutY="13.0" prefHeight="25.0" prefWidth="212.0" promptText="Search here...." />
+      <Text layoutX="15.0" layoutY="37.0" opacity="0.74" strokeType="OUTSIDE" strokeWidth="0.0" text="Employeeś">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
       </Text>
-      <JFXButton layoutX="431.0" layoutY="25.0" onAction="#btnSearchOnAction" prefHeight="23.0" prefWidth="54.0" style="-fx-background-color: #8e44ad;" text="Search" textFill="WHITE">
+      <JFXButton layoutX="691.0" layoutY="14.0" onAction="#btnSearchOnAction" prefHeight="23.0" prefWidth="54.0" style="-fx-background-color: #8e44ad;" text="Search" textFill="WHITE">
          <font>
             <Font name="Segoe UI" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnDelete" layoutX="554.0" layoutY="23.0" onAction="#btnDeleteOnAction" style="-fx-background-color: #8e44ad;" text="Delete" textFill="WHITE" />
-      <JFXButton fx:id="btnUpdate" layoutX="493.0" layoutY="23.0" onAction="#btnUpdateOnAction" style="-fx-background-color: #8e44ad;" text="Update" textFill="WHITE" />
-      <TableView fx:id="tblEmployees" layoutX="32.0" layoutY="147.0" prefHeight="240.0" prefWidth="720.0">
+      <TableView fx:id="tblEmployees" layoutX="15.0" layoutY="146.0" prefHeight="340.0" prefWidth="870.0">
          <columns>
             <TableColumn fx:id="colEmpId" prefWidth="57.0" text="Emp ID" />
             <TableColumn fx:id="colJobRole" prefWidth="84.0" text="Job Role" />
             <TableColumn fx:id="colName" prefWidth="102.0" text="Name" />
-            <TableColumn fx:id="colNICNumber" prefWidth="93.0" text="NIC Num" />
-            <TableColumn fx:id="colAddress" prefWidth="96.0" text="Address" />
-            <TableColumn fx:id="colPhoneNumber" prefWidth="82.0" text="Phone Num" />
-            <TableColumn fx:id="colSalary" prefWidth="79.0" text="Salary" />
-            <TableColumn fx:id="colAction" prefWidth="126.0" text="Action" />
+            <TableColumn fx:id="colNICNumber" prefWidth="126.0" text="NIC Num" />
+            <TableColumn fx:id="colAddress" prefWidth="133.0" text="Address" />
+            <TableColumn fx:id="colPhoneNumber" prefWidth="120.0" text="Phone Num" />
+            <TableColumn fx:id="colSalary" prefWidth="122.0" text="Salary" />
+            <TableColumn fx:id="colAction" prefWidth="125.0" text="Action" />
          </columns>
       </TableView>
-      <TextField fx:id="txtEmployeeId" layoutX="24.0" layoutY="92.0" prefHeight="25.0" prefWidth="55.0" />
-      <TextField fx:id="txtJobRole" layoutX="84.0" layoutY="92.0" prefHeight="25.0" prefWidth="91.0" />
-      <TextField fx:id="txtName" layoutX="184.0" layoutY="92.0" prefHeight="25.0" prefWidth="91.0" />
-      <TextField fx:id="txtPhoneNumber" layoutX="493.0" layoutY="92.0" prefHeight="25.0" prefWidth="85.0" />
-      <TextField fx:id="txtAddress" layoutX="402.0" layoutY="92.0" prefHeight="25.0" prefWidth="75.0" />
-      <TextField fx:id="txtNICNumber" layoutX="286.0" layoutY="92.0" prefHeight="25.0" prefWidth="104.0" />
-      <TextField fx:id="txtSalary" layoutX="595.0" layoutY="92.0" prefHeight="25.0" prefWidth="85.0" />
+      <TextField fx:id="txtEmployeeId" layoutX="14.0" layoutY="92.0" prefHeight="25.0" prefWidth="55.0" />
+      <TextField fx:id="txtJobRole" layoutX="75.0" layoutY="92.0" prefHeight="25.0" prefWidth="83.0" />
+      <TextField fx:id="txtName" layoutX="166.0" layoutY="92.0" prefHeight="25.0" prefWidth="104.0" />
+      <TextField fx:id="txtPhoneNumber" layoutX="519.0" layoutY="92.0" prefHeight="25.0" prefWidth="111.0" />
+      <TextField fx:id="txtAddress" layoutX="392.0" layoutY="92.0" prefHeight="25.0" prefWidth="117.0" />
+      <TextField fx:id="txtNICNumber" layoutX="278.0" layoutY="92.0" prefHeight="25.0" prefWidth="104.0" />
+      <TextField fx:id="txtSalary" layoutX="646.0" layoutY="92.0" prefHeight="25.0" prefWidth="104.0" />
    </children>
 </AnchorPane>

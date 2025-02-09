@@ -6,19 +6,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.guest.AddNewGuestFormController">
    <children>
       <TextField fx:id="txtName" layoutX="167.0" layoutY="38.0" />
-      <TextField fx:id="txtEmail" layoutX="167.0" layoutY="84.0" />
-      <TextField fx:id="txtNICNumber" layoutX="167.0" layoutY="127.0" />
-      <TextField fx:id="txtAddress" layoutX="167.0" layoutY="171.0" />
+      <TextField fx:id="txtEmail" layoutX="167.0" layoutY="171.0" />
+      <TextField fx:id="txtNICNumber" layoutX="167.0" layoutY="84.0" />
+      <TextField fx:id="txtAddress" layoutX="167.0" layoutY="123.0" />
       <TextField fx:id="txtPhoneNumber" layoutX="167.0" layoutY="221.0" />
       <Text layoutX="97.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-      <Text layoutX="85.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC Number" />
-      <Text layoutX="97.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
-      <Text layoutX="98.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-      <Text layoutX="72.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone NUmber" />
+      <Text layoutX="85.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC Number" />
+      <Text layoutX="97.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
+      <Text layoutX="104.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+      <Text layoutX="72.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" />
       <Text layoutX="80.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guest Request" />
       <TextArea fx:id="txtRequest" layoutX="167.0" layoutY="272.0" prefHeight="50.0" prefWidth="232.0" />
       <JFXButton layoutX="66.0" layoutY="351.0" onAction="#btnCancelOnAction" style="-fx-background-color: #8e44ad;" text="Cancel" textFill="WHITE" />

@@ -13,7 +13,8 @@ import lombok.ToString;
 public class Guest {
     private Integer id;
     private String name;
-    private String nicNumber; private String address;
+    private String nicNumber;
+    private String address;
     private String guestRequest;
     private String email;
     private String phoneNumber;

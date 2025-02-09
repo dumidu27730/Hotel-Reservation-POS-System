@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="edu.icet.controller.employee.AddNewEmployeeFormController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="447.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.employee.AddNewEmployeeFormController">
+   <children>
+      <TextField fx:id="txtJobRole" layoutX="189.0" layoutY="42.0" />
+      <Text layoutX="109.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Job Role" />
+      <TextField fx:id="txtName" layoutX="189.0" layoutY="91.0" />
+      <TextField fx:id="txtNICNumber" layoutX="189.0" layoutY="137.0" />
+      <TextField fx:id="txtAddress" layoutX="189.0" layoutY="180.0" />
+      <TextField fx:id="txtPhoneNumber" layoutX="189.0" layoutY="225.0" />
+      <TextField fx:id="txtSalary" layoutX="189.0" layoutY="268.0" />
+      <Text layoutX="116.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+      <Text layoutX="98.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC Number" />
+      <Text layoutX="110.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
+      <Text layoutX="91.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" />
+      <Text layoutX="116.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salary" />
+      <JFXButton layoutX="57.0" layoutY="346.0" onAction="#btnCancelOnAction" style="-fx-background-color: #8e44ad;" text="Cancel" textFill="WHITE" />
+      <JFXButton layoutX="332.0" layoutY="346.0" onAction="#btnSaveOnAction" style="-fx-background-color: #8e44ad;" text="Save" textFill="WHITE" />
+   </children>
 </AnchorPane>

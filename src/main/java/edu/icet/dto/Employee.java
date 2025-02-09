@@ -18,4 +18,15 @@ public class Employee {
     private String phoneNumber;
     private Float salary;
 
+    public Employee(String jobRole, String name, String nicNumber, String address, String phoneNumber, Float salary) {
+        this.jobRole = jobRole;
+        this.name = name;
+        this.nicNumber = nicNumber;
+        Address = address;
+        this.phoneNumber = phoneNumber;
+        this.salary = salary;
+    }
+
+
 }
+

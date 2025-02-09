@@ -166,7 +166,7 @@ public class GuestFormController implements Initializable {
                 btnDelete.setOnAction(event -> {
                     Guest guest = (Guest) getTableView().getItems().get(getIndex());
                     boolean isDeleted = service.deleteGuest(String.valueOf(guest.getId()));
-
+                    System.out.println("Delete before");
                     if (isDeleted) {
                         new Alert(Alert.AlertType.INFORMATION, "Guest Deleted!").show();
                         loadTable(); // Refresh table after deletion
@@ -203,6 +203,7 @@ public class GuestFormController implements Initializable {
         txtGuestRequest.setText(newValue.getGuestRequest());
         txtEmail.setText(newValue.getEmail());
         txtPhoneNumber.setText(newValue.getPhoneNumber());
+        txtLoyaltyPoint.setText(String.valueOf(newValue.getLoyalatyPoint()));
 
     }
     private void loadTable(){

@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
 
 public class LoginFormController {
@@ -32,4 +33,9 @@ public class LoginFormController {
     }
 
 
+    public void textForgotPasswordOnMouseClicked(MouseEvent mouseEvent) throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../../../view/forgot_password_form.fxml"))));
+        stage.show();
+    }
 }

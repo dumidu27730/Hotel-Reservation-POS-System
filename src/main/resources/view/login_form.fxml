@@ -30,5 +30,6 @@
             <Font name="Dubai Regular" size="12.0" />
          </font>
       </JFXButton>
+      <Text layoutX="84.0" layoutY="279.0" onMouseClicked="#textForgotPasswordOnMouseClicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot password?" />
    </children>
 </AnchorPane>

@@ -8,42 +8,40 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="420.0" prefWidth="849.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.guest.GuestFormController">
+<AnchorPane prefHeight="500.0" prefWidth="900.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.guest.GuestFormController">
    <children>
-      <JFXButton layoutX="635.0" layoutY="23.0" onAction="#btnAddNewGuestOnAction" style="-fx-background-color: #8e44ad;" text="+ Add New Guest" textFill="WHITE" />
-      <TextField fx:id="txtSerchByPhoneNumber" layoutX="235.0" layoutY="23.0" prefHeight="25.0" prefWidth="212.0" promptText="Search here...." />
-      <Text layoutX="24.0" layoutY="47.0" opacity="0.74" strokeType="OUTSIDE" strokeWidth="0.0" text="Guestś">
+      <JFXButton layoutX="775.0" layoutY="13.0" onAction="#btnAddNewGuestOnAction" prefHeight="15.0" prefWidth="111.0" style="-fx-background-color: #8e44ad;" text="+ Add New Guest" textFill="WHITE" />
+      <TextField fx:id="txtSerchByPhoneNumber" layoutX="492.0" layoutY="13.0" prefHeight="25.0" prefWidth="212.0" promptText="Search here...." />
+      <Text layoutX="14.0" layoutY="37.0" opacity="0.74" strokeType="OUTSIDE" strokeWidth="0.0" text="Guestś">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
       </Text>
-      <JFXButton layoutX="454.0" layoutY="25.0" onAction="#btnSearchOnAction" prefHeight="23.0" prefWidth="54.0" style="-fx-background-color: #8e44ad;" text="Search" textFill="WHITE">
+      <JFXButton layoutX="711.0" layoutY="14.0" onAction="#btnSearchOnAction" prefHeight="23.0" prefWidth="54.0" style="-fx-background-color: #8e44ad;" text="Search" textFill="WHITE">
          <font>
             <Font name="Segoe UI" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnDelete" layoutX="578.0" layoutY="24.0" onAction="#btnDeleteOnAction" style="-fx-background-color: #8e44ad;" text="Delete" textFill="WHITE" />
-      <JFXButton fx:id="btnUpdate" layoutX="516.0" layoutY="24.0" onAction="#btnUpdateOnAction" style="-fx-background-color: #8e44ad;" text="Update" textFill="WHITE" />
-      <TableView fx:id="tblGuests" layoutX="14.0" layoutY="147.0" prefHeight="240.0" prefWidth="807.0">
+      <TableView fx:id="tblGuests" layoutX="14.0" layoutY="147.0" prefHeight="340.0" prefWidth="870.0">
          <columns>
-            <TableColumn fx:id="colGuestId" prefWidth="56.0" text="Guest ID" />
-            <TableColumn fx:id="colName" prefWidth="102.0" text="Name" />
-            <TableColumn fx:id="colNICNumber" prefWidth="93.0" text="NIC Num" />
-            <TableColumn fx:id="colAddress" prefWidth="96.0" text="Address" />
-            <TableColumn fx:id="colGuestRequest" prefWidth="92.0" text="Guest Request" />
-            <TableColumn fx:id="colEmail" prefWidth="69.0" text="Email" />
-            <TableColumn fx:id="colPhoneNumber" text="Phone Num" />
-            <TableColumn fx:id="colLoyaltyPoint" prefWidth="100.0" text="Loyalty Point" />
-            <TableColumn fx:id="colAction" prefWidth="118.0" text="Action" />
+            <TableColumn fx:id="colGuestId" prefWidth="49.0" text=" ID" />
+            <TableColumn fx:id="colName" prefWidth="101.0" text="Name" />
+            <TableColumn fx:id="colNICNumber" prefWidth="94.0" text="NIC Num" />
+            <TableColumn fx:id="colAddress" prefWidth="108.0" text="Address" />
+            <TableColumn fx:id="colGuestRequest" prefWidth="114.0" text="Guest Request" />
+            <TableColumn fx:id="colEmail" prefWidth="141.0" text="Email" />
+            <TableColumn fx:id="colPhoneNumber" prefWidth="89.0" text="Phone Num" />
+            <TableColumn fx:id="colLoyaltyPoint" prefWidth="50.0" text="Point" />
+            <TableColumn fx:id="colAction" prefWidth="128.0" text="Action" />
          </columns>
       </TableView>
-      <TextField fx:id="txtGuestId" layoutX="24.0" layoutY="92.0" prefHeight="25.0" prefWidth="55.0" />
-      <TextField fx:id="txtName" layoutX="96.0" layoutY="92.0" prefHeight="25.0" prefWidth="76.0" />
-      <TextField fx:id="txtNICNumber" layoutX="190.0" layoutY="92.0" prefHeight="25.0" prefWidth="91.0" />
-      <TextField fx:id="txtEmail" layoutX="481.0" layoutY="92.0" prefHeight="25.0" prefWidth="63.0" />
-      <TextField fx:id="txtGuestRequest" layoutX="391.0" layoutY="92.0" prefHeight="25.0" prefWidth="85.0" />
-      <TextField fx:id="txtAddress" layoutX="289.0" layoutY="92.0" prefHeight="25.0" prefWidth="91.0" />
-      <TextField fx:id="txtPhoneNumber" layoutX="558.0" layoutY="92.0" prefHeight="25.0" prefWidth="63.0" />
-      <TextField fx:id="txtLoyaltyPoint" layoutX="635.0" layoutY="92.0" prefHeight="25.0" prefWidth="76.0" />
+      <TextField fx:id="txtGuestId" disable="true" layoutX="14.0" layoutY="92.0" prefHeight="25.0" prefWidth="45.0" />
+      <TextField fx:id="txtName" layoutX="70.0" layoutY="92.0" prefHeight="25.0" prefWidth="94.0" />
+      <TextField fx:id="txtNICNumber" layoutX="171.0" layoutY="92.0" prefHeight="25.0" prefWidth="91.0" />
+      <TextField fx:id="txtEmail" layoutX="541.0" layoutY="92.0" prefHeight="25.0" prefWidth="172.0" />
+      <TextField fx:id="txtGuestRequest" layoutX="370.0" layoutY="92.0" prefHeight="25.0" prefWidth="163.0" />
+      <TextField fx:id="txtAddress" layoutX="271.0" layoutY="92.0" prefHeight="25.0" prefWidth="94.0" />
+      <TextField fx:id="txtPhoneNumber" layoutX="720.0" layoutY="92.0" prefHeight="25.0" prefWidth="91.0" />
+      <TextField fx:id="txtLoyaltyPoint" disable="true" layoutX="823.0" layoutY="92.0" prefHeight="25.0" prefWidth="63.0" />
    </children>
 </AnchorPane>

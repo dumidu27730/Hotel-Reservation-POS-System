@@ -49,7 +49,8 @@ public class GuestDaoImpl implements GuestDao {
                         resultSet.getString("address"),
                         resultSet.getString("guest_request"),
                         resultSet.getString("email"),
-                        resultSet.getString("phone_number")
+                        resultSet.getString("phone_number"),
+                        resultSet.getFloat("loyalty_points")
                 );
             }
 
@@ -61,7 +62,7 @@ public class GuestDaoImpl implements GuestDao {
 
     @Override
     public boolean delete(String s) {
-        String SQL = "DELETE FROM rooms WHERE guest_id = ?";
+        String SQL = "DELETE FROM guests WHERE guest_id = ?";
         try {
             return CrudUtil.execute(SQL,s);
         } catch (SQLException e) {

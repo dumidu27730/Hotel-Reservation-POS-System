@@ -9,16 +9,15 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AddNewRoomFormController implements Initializable {
 
+
+public class AddNewRoomFormController implements Initializable {
+    public TableView tblRooms;
 
     @FXML
     public ComboBox cmbRoomType;
@@ -36,7 +35,7 @@ public class AddNewRoomFormController implements Initializable {
     private TextField txtRoomNumber;
 
     RoomService service = ServiceFactory.getInstance().getServiceType(ServiceType.ROOM);
-
+    RoomFormController roomFormController = new RoomFormController();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -81,6 +80,7 @@ public class AddNewRoomFormController implements Initializable {
 
         if(service.addRoom(room)){
             new Alert(Alert.AlertType.INFORMATION,"Room Add Success").show();
+            roomFormController.loadTable();
         }else{
             new Alert(Alert.AlertType.ERROR,"Room Not Add").show();
         }

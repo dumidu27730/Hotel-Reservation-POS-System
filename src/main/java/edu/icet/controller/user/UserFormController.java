@@ -3,7 +3,6 @@ package edu.icet.controller.user;
 import com.jfoenix.controls.JFXButton;
 import edu.icet.dto.User;
 import edu.icet.service.ServiceFactory;
-import edu.icet.service.custom.RoomService;
 import edu.icet.service.custom.UserService;
 import edu.icet.util.ServiceType;
 import javafx.collections.ObservableList;
@@ -23,25 +22,54 @@ import java.util.ResourceBundle;
 
 public class UserFormController implements Initializable {
 
-    public TextField txtSerchById;
-    public TableView tblUsers;
-    public TableColumn colNo;
-    public TableColumn colPosition;
-    public TableColumn colName;
-    public TableColumn colNICNumber;
-    public TableColumn colEmail;
-    public TableColumn colUserName;
-    public TableColumn colPhoneNumber;
-    public TableColumn colAction;
-    public JFXButton btnDelete;
-    public JFXButton btnUpdate;
-    public TextField txtPosition;
-    public TextField txtName;
-    public TextField txtNICNumber;
-    public TextField txtPhoneNumber;
-    public TextField txtUserName;
-    public TextField txtEmail;
+    public TextField txtSearchById;
+    @FXML
+    private TableColumn<?, ?> colAction;
 
+    @FXML
+    private TableColumn<?, ?> colEmail;
+
+    @FXML
+    private TableColumn<?, ?> colId;
+
+    @FXML
+    private TableColumn<?, ?> colNICNumber;
+
+    @FXML
+    private TableColumn<?, ?> colName;
+
+    @FXML
+    private TableColumn<?, ?> colPhoneNumber;
+
+    @FXML
+    private TableColumn<?, ?> colPosition;
+
+    @FXML
+    private TableColumn<?, ?> colUserName;
+
+    @FXML
+    private TableView<User> tblUsers;
+
+    @FXML
+    private TextField txtEmail;
+
+    @FXML
+    private TextField txtId;
+
+    @FXML
+    private TextField txtNICNumber;
+
+    @FXML
+    private TextField txtName;
+
+    @FXML
+    private TextField txtPhoneNumber;
+
+    @FXML
+    private TextField txtPosition;
+
+    @FXML
+    private TextField txtUserName;
 
     UserService service = ServiceFactory.getInstance().getServiceType(ServiceType.USER);
 
@@ -52,16 +80,15 @@ public class UserFormController implements Initializable {
         stage.show();
     }
 
-    public void btnSearchOnAction(ActionEvent actionEvent) {
-
-        User user = service.searchUser(txtSerchById.getText());
+    @FXML
+    void btnSearchOnAction(ActionEvent event) {
+        User user = service.searchUser(txtSearchById.getText());
         if (user != null) {
             setTextToValues(user);
         } else {
             new Alert(Alert.AlertType.WARNING, "User Not Found!").show();
         }
     }
-
     private void loadTable(){
         ObservableList<User> all = service.getAll();
         tblUsers.setItems(all);
@@ -70,17 +97,17 @@ public class UserFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        colNo.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colPosition.setCellValueFactory(new PropertyValueFactory<>("cmbPosition"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        colNICNumber.setCellValueFactory(new PropertyValueFactory<>("nicNumbe"));
+        colNICNumber.setCellValueFactory(new PropertyValueFactory<>("nicNumber"));
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         colUserName.setCellValueFactory(new PropertyValueFactory<>("username"));
         colPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
 
 
 
-        colAction.setCellFactory(param -> new TableCell<>() {
+        colAction.setCellFactory(param -> new TableCell() {
             private final JFXButton btnUpdate = new JFXButton("Update");
             private final JFXButton btnDelete = new JFXButton("Delete");
             private final HBox actionButtons = new HBox(10, btnUpdate, btnDelete); // HBox with spacing
@@ -93,16 +120,8 @@ public class UserFormController implements Initializable {
                 btnUpdate.setOnAction(event -> {
 
 
-                    Stage stage = new Stage();
-                    try {
-                        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../../../../view/user/update_user_form.fxml"))));
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-                    stage.show();
-
                     User user = new User(
-                            txtSerchById.getText(),
+                            txtId.getText(),
                             txtName.getText(),
                             txtNICNumber.getText(),
                             txtEmail.getText(),
@@ -120,14 +139,14 @@ public class UserFormController implements Initializable {
                     }
 
 
-               User user1 = (User) getTableView().getItems().get(getIndex());
+                    User user1 = (User) getTableView().getItems().get(getIndex());
                     setTextToValues(user);
 
                 });
 
                 // Delete Button Action (Remove customer from list)
                 btnDelete.setOnAction(event -> {
-                   User user = (User) getTableView().getItems().get(getIndex());
+                    User user = (User) getTableView().getItems().get(getIndex());
                     boolean isDeleted = service.deleteUser(String.valueOf(user.getId()));
 
                     if (isDeleted) {
@@ -158,42 +177,15 @@ public class UserFormController implements Initializable {
             }
         });
     }
-
-
     private void setTextToValues(User newValue) {
 
-       txtPosition.setText(newValue.getCmbPosition());
+        txtPosition.setText(newValue.getCmbPosition());
         txtName.setText(newValue.getName());
         txtNICNumber.setText(newValue.getNicNumber());
         txtEmail.setText(newValue.getEmail());
         txtUserName.setText(newValue.getUsername());
         txtPhoneNumber.setText(newValue.getPhoneNumber());
 
-     }
-
-
-    public void btnDeleteOnAction(ActionEvent actionEvent) {
-
-
     }
 
-    public void btnUpdateOnAction(ActionEvent actionEvent) {
-                            User user = new User(
-                            txtSerchById.getText(),
-                            txtName.getText(),
-                            txtNICNumber.getText(),
-                            txtEmail.getText(),
-                            txtUserName.getText(),
-                            txtPhoneNumber.getText(),
-                           null
-
-                            );
-                    if (service.updateUser(user)){
-                        new Alert(Alert.AlertType.INFORMATION,"User Updated!!").show();
-                        loadTable();
-                    }else {
-                        new Alert(Alert.AlertType.ERROR,"User Not Updated!!").show();
-
-                    }
-    }
 }

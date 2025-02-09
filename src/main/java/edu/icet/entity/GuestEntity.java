@@ -20,6 +20,7 @@ public class GuestEntity{
     private String phoneNumber;
     private Float loyalatyPoint;
 
+
     public GuestEntity(Integer id, String name, String nicNumber, String address, String guestRequest, String email, String phoneNumber) {
         this.id = id;
         this.name = name;

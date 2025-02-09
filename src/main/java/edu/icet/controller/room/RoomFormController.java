@@ -2,10 +2,8 @@ package edu.icet.controller.room;
 
 import com.jfoenix.controls.JFXButton;
 import edu.icet.dto.Room;
-import edu.icet.dto.User;
 import edu.icet.service.ServiceFactory;
 import edu.icet.service.custom.RoomService;
-import edu.icet.service.custom.UserService;
 import edu.icet.util.ServiceType;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,13 +21,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class RoomFormController implements Initializable {
-
-    public TableView tblRooms;
     @FXML
-    private JFXButton btnDelete;
+    public TableView <Room>tblRooms;
 
     @FXML
-    private JFXButton btnUpdate;
+    public TextField txtRoomNo;
 
     @FXML
     private TableColumn<?, ?> colAction;
@@ -48,9 +44,6 @@ public class RoomFormController implements Initializable {
 
     @FXML
     private TableColumn<?, ?> colRoomType;
-
-    @FXML
-    private TableView<?> tblUsers;
 
     @FXML
     private TextField txtAvailabilityStatus;
@@ -76,10 +69,6 @@ public class RoomFormController implements Initializable {
         stage.show();
     }
 
-    @FXML
-    void btnDeleteOnAction(ActionEvent event) {
-
-    }
 
     @FXML
     void btnSearchOnAction(ActionEvent event) {
@@ -91,17 +80,14 @@ public class RoomFormController implements Initializable {
         }
     }
 
-    @FXML
-    void btnUpdateOnAction(ActionEvent event) {
-
-    }
     private void setTextToValues(Room newValue) {
+        txtRoomNo.setText(newValue.getRoomNumber());
         txtRoomType.setText(newValue.getRoomType());
         txtDescription.setText(newValue.getDescription());
         txtPricePerNight.setText(String.valueOf(newValue.getPricePerNight()));
         txtAvailabilityStatus.setText(newValue.getAvailableStatus());
     }
-    private void loadTable(){
+    public void loadTable(){
         ObservableList<Room> all = service.getAll();
         tblRooms.setItems(all);
     }
@@ -132,7 +118,7 @@ public class RoomFormController implements Initializable {
                             txtSerchByRoomNo.getText(),
                             txtRoomType.getText(),
                             txtDescription.getText(),
-                           Float.parseFloat(txtPricePerNight.getText()),
+                            Float.parseFloat(txtPricePerNight.getText()),
                             txtAvailabilityStatus.getText()
                     );
                     if (service.updateRoom(room)){
@@ -140,7 +126,6 @@ public class RoomFormController implements Initializable {
                         loadTable();
                     }else {
                         new Alert(Alert.AlertType.ERROR,"Room Not Updated!!").show();
-
                     }
 
 

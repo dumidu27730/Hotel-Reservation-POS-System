@@ -4,13 +4,22 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
+
+
 
 public class HomeFormController {
 
+    public AnchorPane anchorPaneHome;
     @FXML
     private AnchorPane loadFormContent;
 
@@ -86,5 +95,23 @@ public class HomeFormController {
     }
 
        public void btnLogoutOnAction(ActionEvent actionEvent) {
+
+           Alert logoutAlert = new Alert(Alert.AlertType.CONFIRMATION);
+           logoutAlert.setTitle("Hotel Store");
+           logoutAlert.setContentText("Do you want to logout?");
+           Optional<ButtonType> buttonType = logoutAlert.showAndWait();
+           if (buttonType.isPresent() && buttonType.get().equals(ButtonType.OK)) {
+               Stage stage = new Stage();
+               try {
+                   stage.setScene(new Scene(
+                           FXMLLoader.load(getClass().getResource("../../../view/login_form.fxml"))));
+                   stage.setTitle("Login");
+                   stage.setResizable(false);
+                   stage.show();
+                   anchorPaneHome.getScene().getWindow().hide();
+               } catch (IOException e) {
+                   throw new RuntimeException(e);
+               }
+           }
     }
 }
