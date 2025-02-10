@@ -1,5 +1,6 @@
 package edu.icet.controller.booking;
 
+import edu.icet.dto.Booking;
 import edu.icet.dto.Guest;
 import edu.icet.service.ServiceFactory;
 import edu.icet.service.custom.GuestService;
@@ -109,6 +110,7 @@ public class AddNewBookingFormController implements Initializable {
         }else{
             new Alert(Alert.AlertType.ERROR,"Guest Not Add").show();
         }
+        Booking booking = new Booking();
     }
 
 
