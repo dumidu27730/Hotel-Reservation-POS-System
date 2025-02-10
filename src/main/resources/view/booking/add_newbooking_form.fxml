@@ -12,15 +12,15 @@
    <children>
       <DatePicker fx:id="dateCheckIn" layoutX="310.0" layoutY="252.0" prefHeight="25.0" prefWidth="142.0" />
       <DatePicker fx:id="dateCheckOut" layoutX="10.0" layoutY="252.0" prefHeight="25.0" prefWidth="142.0" />
-      <TextField fx:id="txtDay" layoutX="496.0" layoutY="252.0" prefHeight="25.0" prefWidth="74.0" />
+      <TextField fx:id="txtDays" layoutX="233.0" layoutY="252.0" prefHeight="25.0" prefWidth="74.0" />
       <Text layoutX="45.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check in" />
       <Text layoutX="328.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check out" />
-      <Text layoutX="224.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day" />
+      <Text layoutX="270.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Days" />
       <ComboBox fx:id="cmbRoomType" layoutX="11.0" layoutY="310.0" prefHeight="25.0" prefWidth="128.0" />
       <Text layoutX="15.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Type" wrappingWidth="60.287109375" />
       <ComboBox fx:id="cmbRoom" layoutX="183.0" layoutY="310.0" prefHeight="25.0" prefWidth="122.0" />
       <Text layoutX="203.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room" />
-      <TextField fx:id="txtGuestQty" layoutX="210.0" layoutY="252.0" prefHeight="25.0" prefWidth="60.0" />
+      <TextField fx:id="txtGuestQty" layoutX="489.0" layoutY="252.0" prefHeight="25.0" prefWidth="60.0" />
       <Text layoutX="500.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guest QTY" />
       <Text layoutX="14.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
       <Text layoutX="314.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
@@ -40,5 +40,9 @@
       <JFXButton layoutX="355.0" layoutY="361.0" onAction="#btnCancelOnAction" style="-fx-background-color: #8e44ad;" text="Cancel" textFill="WHITE" />
       <ComboBox fx:id="cmbReservationStatus" layoutX="367.0" layoutY="310.0" prefHeight="25.0" prefWidth="122.0" />
       <Text layoutX="368.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation Status" wrappingWidth="97.423828125" />
+      <TextField fx:id="txtCheckInTime" layoutX="158.0" layoutY="252.0" prefHeight="25.0" prefWidth="66.0" />
+      <Text layoutX="146.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check In Time" />
+      <TextField fx:id="txtUserId" layoutX="268.0" layoutY="15.0" prefHeight="25.0" prefWidth="74.0" />
+      <TextField fx:id="txtCustomerId" layoutX="370.0" layoutY="15.0" prefHeight="25.0" prefWidth="74.0" />
    </children>
 </AnchorPane>

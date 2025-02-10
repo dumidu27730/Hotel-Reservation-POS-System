@@ -16,8 +16,15 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AddNewBookingFormController implements Initializable {
+    @FXML
+    public ComboBox<String> cmbReservationStatus;
 
-    public ComboBox cmbReservationStatus;
+    @FXML
+    public TextField txtCheckInTime;
+
+    @FXML
+    public TextField txtDays;
+
     @FXML
     private ComboBox<String> cmbRoom;
 
@@ -70,7 +77,7 @@ public class AddNewBookingFormController implements Initializable {
                 roomTypeList.add(Room.getRoomType()) );
                 cmbRoomType.setItems(roomTypeList);
 
- ObservableList<String> roomNoList = FXCollections.observableArrayList();
+        ObservableList<String> roomNoList = FXCollections.observableArrayList();
         service2.getAll().forEach(Room ->
                 roomNoList.add(Room.getRoomNumber()) );
                 cmbRoom.setItems(roomNoList);
@@ -102,8 +109,8 @@ public class AddNewBookingFormController implements Initializable {
         }else{
             new Alert(Alert.AlertType.ERROR,"Guest Not Add").show();
         }
-
     }
+
 
     @FXML
     void btnCancelOnAction(ActionEvent event) {
