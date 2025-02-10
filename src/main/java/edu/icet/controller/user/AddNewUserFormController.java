@@ -50,8 +50,8 @@ public class AddNewUserFormController implements Initializable {
                txtName.getText(),
                txtNICNumber.getText(),
                txtEmail.getText(),
-               txtPhoneNumber.getText(),
                txtUsername.getText(),
+               txtPhoneNumber.getText(),
                txtPassword.getText()
        );
 
@@ -62,16 +62,15 @@ public class AddNewUserFormController implements Initializable {
         }
     }
 
-    @FXML
-    void btncancelOnAction(ActionEvent event) {
-
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList<String> position = FXCollections.observableArrayList();
         position.add("Admin");
         position.add("Receptionist");
         cmbPosition.setItems(position);
+    }
+
+    public void btncancelOnAction(ActionEvent actionEvent) {
+
     }
 }

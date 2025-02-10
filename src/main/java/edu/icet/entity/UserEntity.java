@@ -19,4 +19,16 @@ public class UserEntity {
     private String username;
     private String phoneNumber;
     private String password;
+
+    public UserEntity(String id, String cmbPosition, String name, String nicNumber, String email, String username, String phoneNumber) {
+        this.id = id;
+        this.cmbPosition = cmbPosition;
+        this.name = name;
+        this.nicNumber = nicNumber;
+        this.email = email;
+        this.username = username;
+        this.phoneNumber = phoneNumber;
+    }
+
+
 }

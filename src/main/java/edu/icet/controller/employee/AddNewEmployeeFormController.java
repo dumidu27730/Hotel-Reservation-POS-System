@@ -44,8 +44,8 @@ public class AddNewEmployeeFormController {
        Employee employee = new Employee(
                 txtJobRole.getText(),
                 txtName.getText(),
-                txtNICNumber.getText(),
                 txtAddress.getText(),
+                txtNICNumber.getText(),
                 txtPhoneNumber.getText(),
                 Float.parseFloat(txtSalary.getText())
         );

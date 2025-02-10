@@ -95,10 +95,6 @@ public class GuestFormController implements Initializable {
 
     }
 
-    @FXML
-    void btnDeleteOnAction(ActionEvent event) {
-
-    }
 
     @FXML
     void btnSearchOnAction(ActionEvent event) {
@@ -108,11 +104,6 @@ public class GuestFormController implements Initializable {
         } else {
             new Alert(Alert.AlertType.WARNING, "Guest Not Found!").show();
         }
-    }
-
-    @FXML
-    void btnUpdateOnAction(ActionEvent event) {
-
     }
 
     @Override

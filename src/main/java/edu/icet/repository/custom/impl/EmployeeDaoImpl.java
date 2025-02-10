@@ -1,7 +1,6 @@
 package edu.icet.repository.custom.impl;
 
 import edu.icet.entity.EmployeeEntity;
-import edu.icet.entity.RoomEntity;
 import edu.icet.repository.custom.EmployeeDao;
 import edu.icet.util.CrudUtil;
 
@@ -19,13 +18,13 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Override
     public boolean save(EmployeeEntity entity) {
         try {
-            String SQL = "INSERT INTO employees(employee_id,job_role,name,address,nic_number,phone_number,salary) VALUES (?,?,?,?,?,?,?)";
+            String SQL = "INSERT INTO employees(employee_id,job_role,name,nic_number,address,phone_number,salary) VALUES (?,?,?,?,?,?,?)";
             return CrudUtil.execute(SQL,
                     entity.getEmployeeId(),
                     entity.getJobRole(),
                     entity.getName(),
-                    entity.getAddress(),
                     entity.getNicNumber(),
+                    entity.getAddress(),
                     entity.getPhoneNumber(),
                     entity.getSalary()
             );
@@ -36,7 +35,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     @Override
     public EmployeeEntity search(String s) {
-        String SQL = "SELECT * FROM employees WHERE id=? || name=?";
+        String SQL = "SELECT * FROM employees WHERE nic_number=? || phone_number=?";
 
         try {
             ResultSet resultSet = CrudUtil.execute(SQL, s,s);
@@ -61,7 +60,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     @Override
     public boolean delete(String s) {
-        String SQL = "DELETE FROM employees WHERE room_number = ?";
+        String SQL = "DELETE FROM employees WHERE employee_id = ?";
         try {
             return CrudUtil.execute(SQL,s);
         } catch (SQLException e) {

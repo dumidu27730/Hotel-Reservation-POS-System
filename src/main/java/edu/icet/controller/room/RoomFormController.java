@@ -115,7 +115,7 @@ public class RoomFormController implements Initializable {
 
 
                     Room room = new Room(
-                            txtSerchByRoomNo.getText(),
+                            txtRoomNo.getText(),
                             txtRoomType.getText(),
                             txtDescription.getText(),
                             Float.parseFloat(txtPricePerNight.getText()),

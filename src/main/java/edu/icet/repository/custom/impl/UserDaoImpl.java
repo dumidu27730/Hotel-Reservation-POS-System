@@ -37,7 +37,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public UserEntity search(String s) {
-        String SQL = "SELECT * FROM users WHERE id=? || name=?";
+        String SQL = "SELECT * FROM users WHERE nic_number=? || phone_number=?";
 
         try {
             ResultSet resultSet = CrudUtil.execute(SQL, s,s);
@@ -63,7 +63,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean delete(String s) {
-        String SQL = "DELETE FROM users WHERE id = ?";
+        String SQL = "DELETE FROM users WHERE user_id = ?";
         try {
             return CrudUtil.execute(SQL,s);
         } catch (SQLException e) {
@@ -73,7 +73,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean update(UserEntity entity) {
-        String SQL = "UPDATE users SET  position=? , name=?,nic_number =? ,email = ?, username= ? ,phone_number=?,password=? WHERE user_id=? ";
+        String SQL = "UPDATE users SET  position=? , name=?,nic_number =? ,email = ?, username= ? ,phone_number=? WHERE user_id=? ";
         try {
             return CrudUtil.execute(SQL,
                     entity.getCmbPosition(),
@@ -82,7 +82,6 @@ public class UserDaoImpl implements UserDao {
                     entity.getEmail(),
                     entity.getUsername(),
                     entity.getPhoneNumber(),
-                    entity.getPassword(),
                     entity.getId());
 
         } catch (SQLException e) {

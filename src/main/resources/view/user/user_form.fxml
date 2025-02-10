@@ -34,7 +34,7 @@
             <TableColumn fx:id="colAction" prefWidth="132.0" text="Action" />
         </columns>
       </TableView>
-      <TextField fx:id="txtId" layoutX="14.0" layoutY="87.0" prefHeight="25.0" prefWidth="61.0" />
+      <TextField fx:id="txtId" disable="true" layoutX="14.0" layoutY="87.0" prefHeight="25.0" prefWidth="61.0" />
       <TextField fx:id="txtPosition" layoutX="81.0" layoutY="87.0" prefHeight="25.0" prefWidth="68.0" />
       <TextField fx:id="txtName" layoutX="155.0" layoutY="87.0" prefHeight="25.0" prefWidth="76.0" />
       <TextField fx:id="txtNICNumber" layoutX="237.0" layoutY="87.0" prefHeight="25.0" prefWidth="115.0" />

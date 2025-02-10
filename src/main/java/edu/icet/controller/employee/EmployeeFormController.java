@@ -91,11 +91,6 @@ public class EmployeeFormController implements Initializable {
     }
 
     @FXML
-    void btnDeleteOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
     void btnSearchOnAction(ActionEvent event) {
         Employee employee = service.searchEmployee(txtSerchByNICNumber.getText());
         if (employee != null) {
@@ -108,8 +103,8 @@ public class EmployeeFormController implements Initializable {
         txtEmployeeId.setText(String.valueOf(newValue.getEmployeeId()));
         txtJobRole.setText(newValue.getJobRole());
         txtName.setText(newValue.getName());
-        txtNICNumber.setText(newValue.getNicNumber());
         txtAddress.setText(newValue.getAddress());
+        txtNICNumber.setText(newValue.getNicNumber());
         txtPhoneNumber.setText(newValue.getPhoneNumber());
         txtSalary.setText(String.valueOf(newValue.getSalary()));
     }
@@ -119,18 +114,14 @@ public class EmployeeFormController implements Initializable {
         tblEmployees.setItems(all);
     }
 
-    @FXML
-    void btnUpdateOnAction(ActionEvent event) {
-
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         colEmpId.setCellValueFactory(new PropertyValueFactory<>("employeeId"));
         colJobRole.setCellValueFactory(new PropertyValueFactory<>("jobRole"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
         colNICNumber.setCellValueFactory(new PropertyValueFactory<>("nicNumber"));
-        colAddress.setCellValueFactory(new PropertyValueFactory<>("Address"));
         colPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
         colSalary.setCellValueFactory(new PropertyValueFactory<>("salary"));
 

@@ -35,10 +35,10 @@ public class RoomDaoImpl implements RoomDao {
 
     @Override
     public RoomEntity search(String s) {
-        String SQL = "SELECT * FROM rooms WHERE id=? || name=?";
+        String SQL = "SELECT * FROM rooms WHERE room_number=? ";
 
         try {
-            ResultSet resultSet = CrudUtil.execute(SQL, s,s);
+            ResultSet resultSet = CrudUtil.execute(SQL,s);
 
             if(resultSet.next()) {
                 return new RoomEntity(

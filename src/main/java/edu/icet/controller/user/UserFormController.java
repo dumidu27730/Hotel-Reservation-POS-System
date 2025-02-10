@@ -118,17 +118,14 @@ public class UserFormController implements Initializable {
                 btnDelete.setStyle("-fx-background-color: #FF0000; -fx-text-fill: white;");
 
                 btnUpdate.setOnAction(event -> {
-
-
                     User user = new User(
-                            txtId.getText(),
+                            Integer.parseInt(txtId.getText()),
+                            txtPosition.getText(),
                             txtName.getText(),
                             txtNICNumber.getText(),
                             txtEmail.getText(),
                             txtUserName.getText(),
-                            txtPhoneNumber.getText(),
-                            null
-
+                            txtPhoneNumber.getText()
                     );
                     if (service.updateUser(user)){
                         new Alert(Alert.AlertType.INFORMATION,"User Updated!!").show();
@@ -178,7 +175,7 @@ public class UserFormController implements Initializable {
         });
     }
     private void setTextToValues(User newValue) {
-
+        txtId.setText(String.valueOf(newValue.getId()));
         txtPosition.setText(newValue.getCmbPosition());
         txtName.setText(newValue.getName());
         txtNICNumber.setText(newValue.getNicNumber());

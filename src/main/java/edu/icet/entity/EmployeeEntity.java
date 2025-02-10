@@ -14,7 +14,7 @@ public class EmployeeEntity {
     private String jobRole;
     private String name;
     private String nicNumber;
-    private String Address;
+    private String address;
     private String phoneNumber;
     private Float salary;
 
@@ -22,7 +22,7 @@ public class EmployeeEntity {
         this.jobRole = jobRole;
         this.name = name;
         this.nicNumber = nicNumber;
-        Address = address;
+        this.address = address;
         this.phoneNumber = phoneNumber;
         this.salary = salary;
     }
