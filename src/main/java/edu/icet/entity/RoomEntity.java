@@ -16,4 +16,19 @@ public class RoomEntity {
     private String description;
     private Float pricePerNight;
     private String availableStatus;
+
+
+
+    public RoomEntity(String roomNumber, String roomType) {
+        this.roomNumber = roomNumber;
+        this.roomType = roomType;
+    }
+
+
+
+
+
+
+
+
 }

@@ -1,9 +1,10 @@
 package edu.icet.repository.custom.impl;
 
 import edu.icet.entity.RoomEntity;
-import edu.icet.entity.UserEntity;
 import edu.icet.repository.custom.RoomDao;
 import edu.icet.util.CrudUtil;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,8 +13,20 @@ import java.util.List;
 
 public class RoomDaoImpl implements RoomDao {
     @Override
-    public List<String> getIds() {
-        return List.of();
+    public List<RoomEntity> getRoomType() {
+        List<RoomEntity> roomTypeList = new ArrayList<>();
+        try {
+            ResultSet resultSet = CrudUtil.execute("SELECT room_type FROM rooms;");
+            while (resultSet.next()) {
+                roomTypeList.add(new RoomEntity(
+                        resultSet.getString(1),
+                        resultSet.getString(2)
+                ));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return roomTypeList;
     }
 
     @Override
@@ -55,6 +68,8 @@ public class RoomDaoImpl implements RoomDao {
 
         return null;
     }
+
+
 
     @Override
     public boolean delete(String s) {

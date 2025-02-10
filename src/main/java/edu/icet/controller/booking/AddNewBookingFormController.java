@@ -1,12 +1,9 @@
 package edu.icet.controller.booking;
 
 import edu.icet.dto.Guest;
-import edu.icet.dto.Room;
-import edu.icet.dto.User;
 import edu.icet.service.ServiceFactory;
 import edu.icet.service.custom.GuestService;
 import edu.icet.service.custom.RoomService;
-import edu.icet.service.custom.UserService;
 import edu.icet.util.ServiceType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,11 +17,12 @@ import java.util.ResourceBundle;
 
 public class AddNewBookingFormController implements Initializable {
 
+    public ComboBox cmbReservationStatus;
     @FXML
-    private ComboBox<?> cmbRoom;
+    private ComboBox<String> cmbRoom;
 
     @FXML
-    private ComboBox<?> cmbRoomType;
+    private ComboBox<String> cmbRoomType;
 
 
     @FXML
@@ -67,6 +65,23 @@ public class AddNewBookingFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        ObservableList<String> roomTypeList = FXCollections.observableArrayList();
+        service2.getAll().forEach(Room ->
+                roomTypeList.add(Room.getRoomType()) );
+                cmbRoomType.setItems(roomTypeList);
+
+ ObservableList<String> roomNoList = FXCollections.observableArrayList();
+        service2.getAll().forEach(Room ->
+                roomNoList.add(Room.getRoomNumber()) );
+                cmbRoom.setItems(roomNoList);
+
+        ObservableList<String> status = FXCollections.observableArrayList();
+        status.add("Check-IN");
+        status.add("Check-OUT");
+        status.add("Pending");
+        status.add("Confirmed");
+        status.add("Canceled");
+        cmbReservationStatus.setItems(status);
     }
 
     @FXML

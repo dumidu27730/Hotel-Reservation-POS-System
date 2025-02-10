@@ -15,4 +15,5 @@ public interface RoomService extends SuperService {
     boolean deleteRoom(String roomId);
 
     Room searchRoom(String roomId);
+
 }

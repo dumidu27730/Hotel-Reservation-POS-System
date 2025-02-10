@@ -1,11 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="342.0" prefWidth="417.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.booking.BookingFormController">
+<AnchorPane prefHeight="500.0" prefWidth="900.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.booking.BookingFormController">
    <children>
-      <JFXButton layoutX="257.0" layoutY="31.0" onAction="#btnCreateNewBookingOnAction" style="-fx-background-color: #8e44ad;" text="+ Create New Booking" textFill="WHITE" />
+      <JFXButton layoutX="750.0" layoutY="14.0" onAction="#btnCreateNewBookingOnAction" style="-fx-background-color: #8e44ad;" text="+ Create New Booking" textFill="WHITE" />
+      <TextField fx:id="txtSerchByRoomNo" layoutX="463.0" layoutY="12.0" prefHeight="25.0" prefWidth="212.0" promptText="Search here...." />
+      <Text layoutX="14.0" layoutY="36.0" opacity="0.74" strokeType="OUTSIDE" strokeWidth="0.0" text="Bookingś">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="686.0" layoutY="15.0" onAction="#btnSearchOnAction" prefHeight="23.0" prefWidth="54.0" style="-fx-background-color: #8e44ad;" text="Search" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tblRooms" layoutX="15.0" layoutY="146.0" prefHeight="340.0" prefWidth="870.0">
+         <columns>
+            <TableColumn fx:id="colRoomNo" prefWidth="71.0" text="Room No" />
+            <TableColumn fx:id="colRoomType" prefWidth="129.0" text="Room Type" />
+            <TableColumn fx:id="colDescription" prefWidth="287.0" text="Description" />
+            <TableColumn fx:id="colPricePerNight" prefWidth="111.0" text="Price Per Night" />
+            <TableColumn fx:id="colAvailabilityStatus" prefWidth="132.0" text="Availability Status" />
+            <TableColumn fx:id="colAction" prefWidth="139.0" text="Action" />
+         </columns>
+      </TableView>
+      <TextField fx:id="txtRoomType" layoutX="96.0" layoutY="92.0" prefHeight="25.0" prefWidth="112.0" />
+      <TextField fx:id="txtDescription" layoutX="217.0" layoutY="92.0" prefHeight="25.0" prefWidth="283.0" />
+      <TextField fx:id="txtAvailabilityStatus" layoutX="631.0" layoutY="92.0" prefHeight="25.0" prefWidth="112.0" />
+      <TextField fx:id="txtPricePerNight" layoutX="511.0" layoutY="92.0" prefHeight="25.0" prefWidth="97.0" />
+      <TextField fx:id="txtRoomNo" disable="true" layoutX="15.0" layoutY="92.0" prefHeight="25.0" prefWidth="54.0" />
    </children>
 </AnchorPane>

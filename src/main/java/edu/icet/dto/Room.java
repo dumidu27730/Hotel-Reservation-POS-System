@@ -18,5 +18,15 @@ public class Room {
     private Float pricePerNight;
     private String availableStatus;
 
+    public Room(String roomNumber, String roomType) {
+        this.roomNumber = roomNumber;
+        this.roomType = roomType;
+    }
+
+
+
+
+
+
 
 }

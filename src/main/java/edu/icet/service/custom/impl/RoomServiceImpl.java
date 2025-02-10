@@ -1,12 +1,9 @@
 package edu.icet.service.custom.impl;
 
 import edu.icet.dto.Room;
-import edu.icet.dto.User;
 import edu.icet.entity.RoomEntity;
-import edu.icet.entity.UserEntity;
 import edu.icet.repository.DaoFactory;
 import edu.icet.repository.custom.RoomDao;
-import edu.icet.repository.custom.impl.RoomDaoImpl;
 import edu.icet.service.custom.RoomService;
 import edu.icet.util.DaoType;
 import javafx.collections.FXCollections;
@@ -68,12 +65,14 @@ public class RoomServiceImpl implements RoomService {
         }
         return null;
     }
-    public ObservableList<String> getRoomIds(){
-        ObservableList<String> roomIdsList = FXCollections.observableArrayList();
-        getAll().forEach(Room ->
-                roomIdsList.add(Room.getRoomNumber()) );
 
-        return roomIdsList;
+
+    public ObservableList<String> getRoomNo(){
+        ObservableList<String> roomTypeList = FXCollections.observableArrayList();
+        getAll().forEach(Room ->
+                roomTypeList.add(Room.getRoomType()) );
+
+        return roomTypeList;
     }
 
 }
