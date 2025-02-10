@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -16,10 +17,10 @@ public class BookingEntity {
     private Integer userId;
     private Integer guestId;
     private String roomNumber;
-    private Date checkInDate;
+    private LocalDate checkInDate;
     private String checkInTime;
     private Integer days;
-    private Date checkInOut;
+    private LocalDate checkInOut;
     private Integer guestCount;
     private Float totalAmount;
     private String reservationStatus;

@@ -42,7 +42,11 @@
       <Text layoutX="368.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation Status" wrappingWidth="97.423828125" />
       <TextField fx:id="txtCheckInTime" layoutX="158.0" layoutY="252.0" prefHeight="25.0" prefWidth="66.0" />
       <Text layoutX="146.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check In Time" />
-      <TextField fx:id="txtUserId" layoutX="268.0" layoutY="15.0" prefHeight="25.0" prefWidth="74.0" />
-      <TextField fx:id="txtCustomerId" layoutX="370.0" layoutY="15.0" prefHeight="25.0" prefWidth="74.0" />
+      <TextField fx:id="txtUserId" layoutX="358.0" layoutY="28.0" prefHeight="25.0" prefWidth="74.0" />
+      <TextField fx:id="txtGuestId" layoutX="475.0" layoutY="28.0" prefHeight="25.0" prefWidth="74.0" />
+      <Text layoutX="362.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID" />
+      <Text layoutX="477.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guest ID" />
+      <TextField fx:id="txtTotalAmount" layoutX="139.0" layoutY="361.0" prefHeight="25.0" prefWidth="66.0" />
+      <Text layoutX="136.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Amount" />
    </children>
 </AnchorPane>

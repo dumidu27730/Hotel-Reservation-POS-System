@@ -1,5 +1,6 @@
 package edu.icet.controller.booking;
 
+import com.itextpdf.xmp.XMPUtils;
 import edu.icet.dto.Booking;
 import edu.icet.dto.Guest;
 import edu.icet.service.ServiceFactory;
@@ -25,6 +26,12 @@ public class AddNewBookingFormController implements Initializable {
 
     @FXML
     public TextField txtDays;
+    @FXML
+    public TextField txtUserId;
+    @FXML
+    public TextField txtGuestId;
+    @FXML
+    public TextField txtTotalAmount;
 
     @FXML
     private ComboBox<String> cmbRoom;
@@ -42,8 +49,6 @@ public class AddNewBookingFormController implements Initializable {
     @FXML
     private TextField txtAddress;
 
-    @FXML
-    private TextField txtDay;
 
     @FXML
     private TextField txtEmail;
@@ -104,13 +109,30 @@ public class AddNewBookingFormController implements Initializable {
                 txtEmail.getText(),
                 txtPhoneNumber.getText()
         );
-        System.out.println("in controller"+guest);
         if(service1.addGuest(guest)){
-            new Alert(Alert.AlertType.INFORMATION,"Guest Add Success").show();
+            new Alert(Alert.AlertType.INFORMATION,"Guest Add Success");
         }else{
-            new Alert(Alert.AlertType.ERROR,"Guest Not Add").show();
+            new Alert(Alert.AlertType.ERROR,"Guest Not Add");
         }
-        Booking booking = new Booking();
+
+        Booking booking = new Booking(
+                Integer.parseInt(txtUserId.getText()),
+                Integer.parseInt(txtGuestId.getText()),
+                cmbRoom.getValue(),
+                dateCheckIn.getValue(),
+                txtCheckInTime.getText(),
+                Integer.parseInt(txtDays.getText()),
+                dateCheckOut.getValue(),
+                Integer.parseInt(txtGuestQty.getText()),
+                Float.parseFloat(txtTotalAmount.getText()),
+                cmbReservationStatus.getValue()
+        );
+//        if(service1.addGuest(guest)){
+//            new Alert(Alert.AlertType.INFORMATION,"Guest Add Success").show();
+//        }else{
+//            new Alert(Alert.AlertType.ERROR,"Guest Not Add").show();
+//        }
+        System.out.println(booking);
     }
 
 
