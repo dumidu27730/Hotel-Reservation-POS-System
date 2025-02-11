@@ -101,21 +101,6 @@ public class AddNewBookingFormController implements Initializable {
     @FXML
     void btnAddBookingOnAction(ActionEvent event) {
 
-
-        Guest guest = new Guest(
-                txtName.getText(),
-                txtNICNUmber.getText(),
-                txtAddress.getText(),
-                txtGuestComment.getText(),
-                txtEmail.getText(),
-                txtPhoneNumber.getText()
-        );
-        if(service1.addGuest(guest)){
-            new Alert(Alert.AlertType.INFORMATION,"Guest Add Success");
-        }else{
-            new Alert(Alert.AlertType.ERROR,"Guest Not Add");
-        }
-
         Booking booking = new Booking(
                 Integer.parseInt(txtUserId.getText()),
                 Integer.parseInt(txtGuestId.getText()),
@@ -144,10 +129,29 @@ public class AddNewBookingFormController implements Initializable {
     @FXML
     void btnSearchByPhoneNumberOnAction(ActionEvent event) {
         Guest guest = service1.searchGuest(txtSearchByPhoneNumber.getText());
-        setTextToValues(guest);
+
+       if(guest==null){
+           Guest guest1 = new Guest(
+                   txtName.getText(),
+                   txtNICNUmber.getText(),
+                   txtAddress.getText(),
+                   txtGuestComment.getText(),
+                   txtEmail.getText(),
+                   txtPhoneNumber.getText()
+           );
+           if(service1.addGuest(guest1)){
+               new Alert(Alert.AlertType.INFORMATION,"Guest Add Success");
+           }else{
+               new Alert(Alert.AlertType.ERROR,"Guest Not Add");
+           }
+
+       }else{
+           setTextToValues(guest);
+       }
     }
 
     private void setTextToValues(Guest newValue) {
+        txtGuestId.setText(String.valueOf(newValue.getId()));
         txtName.setText(newValue.getName());
         txtNICNUmber.setText(newValue.getNicNumber());
         txtAddress.setText(newValue.getAddress());
