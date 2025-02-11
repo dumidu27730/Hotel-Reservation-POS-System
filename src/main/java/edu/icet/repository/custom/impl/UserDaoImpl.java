@@ -19,6 +19,8 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean save(UserEntity entity) {
+        System.out.println("Password Length: " + entity.getPassword().length());
+
         try {
             String SQL = "INSERT INTO users(position,name,nic_number,email,username,phone_number,password) VALUES (?,?,?,?,?,?,?)";
             return CrudUtil.execute(SQL,

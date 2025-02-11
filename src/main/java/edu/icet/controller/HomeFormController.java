@@ -1,25 +1,40 @@
 package edu.icet.controller;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.util.Date;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
 
-
-public class HomeFormController {
-
+public class HomeFormController implements Initializable {
+    @FXML
     public AnchorPane anchorPaneHome;
+    @FXML
+    public Label lblDate;
+    @FXML
+    public Label lblTime;
+    @FXML
+    public Label lblUserId;
     @FXML
     private AnchorPane loadFormContent;
 
@@ -113,5 +128,28 @@ public class HomeFormController {
                    throw new RuntimeException(e);
                }
            }
+    }
+
+    private void loadDateAndTime() {
+        Date date = new Date();
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+        lblDate.setText(f.format(date));
+
+        Timeline time = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+            LocalTime cTime = LocalTime.now();
+            lblTime.setText(
+                    cTime.getHour() + ":" + cTime.getMinute() + ":" + cTime.getSecond()
+            );
+        }),
+                new KeyFrame(Duration.seconds(1))
+        );
+        time.setCycleCount(Animation.INDEFINITE);
+        time.play();
+
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadDateAndTime();
     }
 }

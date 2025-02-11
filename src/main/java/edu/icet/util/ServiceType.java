@@ -1,5 +1,5 @@
 package edu.icet.util;
 
 public enum ServiceType {
-    USER,GUEST,ROOM,RESERVATION,EMPLOYEE
+    USER,GUEST,ROOM,RESERVATION,EMPLOYEE,BOOKING
 }

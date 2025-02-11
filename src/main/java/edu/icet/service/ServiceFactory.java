@@ -19,7 +19,7 @@ public class ServiceFactory {
             case ROOM:return (T) RoomServiceImpl.getInstance();
             case RESERVATION: return (T) ReservationServiceImpl.getInstance();
             case EMPLOYEE: return (T) EmployeeServiceImpl.getInstance();
-
+            case BOOKING: return (T) BookingServiceImpl.getInstance();
         }
         return null;
     }

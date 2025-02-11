@@ -4,6 +4,7 @@ import com.itextpdf.xmp.XMPUtils;
 import edu.icet.dto.Booking;
 import edu.icet.dto.Guest;
 import edu.icet.service.ServiceFactory;
+import edu.icet.service.custom.BookingService;
 import edu.icet.service.custom.GuestService;
 import edu.icet.service.custom.RoomService;
 import edu.icet.util.ServiceType;
@@ -73,7 +74,7 @@ public class AddNewBookingFormController implements Initializable {
 
     GuestService service1 = ServiceFactory.getInstance().getServiceType(ServiceType.GUEST);
     RoomService service2 = ServiceFactory.getInstance().getServiceType(ServiceType.ROOM);
-
+    BookingService service3 = ServiceFactory.getInstance().getServiceType(ServiceType.BOOKING);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -127,12 +128,11 @@ public class AddNewBookingFormController implements Initializable {
                 Float.parseFloat(txtTotalAmount.getText()),
                 cmbReservationStatus.getValue()
         );
-//        if(service1.addGuest(guest)){
-//            new Alert(Alert.AlertType.INFORMATION,"Guest Add Success").show();
-//        }else{
-//            new Alert(Alert.AlertType.ERROR,"Guest Not Add").show();
-//        }
-        System.out.println(booking);
+        if(service3.addBooking(booking)){
+            new Alert(Alert.AlertType.INFORMATION,"Booking Add Success").show();
+        }else{
+            new Alert(Alert.AlertType.ERROR,"Booking Not Add").show();
+        }
     }
 
 

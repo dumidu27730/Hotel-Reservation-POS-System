@@ -16,6 +16,7 @@ public class DaoFactory {
             case ROOM: return (T) new RoomDaoImpl();
             case RESERVATION: return (T) new ReservationDaoImpl();
             case EMPLOYEE: return (T) new EmployeeDaoImpl();
+            case  BOOKING: return (T) new BookingDaoImpl();
         }
         return null;
     }
