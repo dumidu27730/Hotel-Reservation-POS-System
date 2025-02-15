@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="edu.icet.controller.report.ReportFormController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.report.ReportFormController">
+   <children>
+      <Text layoutX="14.0" layoutY="47.0" opacity="0.74" strokeType="OUTSIDE" strokeWidth="0.0" text="Report's">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="340.0" layoutY="121.0" onAction="#btnBookingReportOnAction" text="Booking Report" />
+      <JFXButton layoutX="347.0" layoutY="167.0" onAction="#btnGuestReportOnAction" text="Guest Report" />
+      <JFXButton layoutX="346.0" layoutY="217.0" onAction="#btnRoomReportOnAction" text="Room Report" />
+      <JFXButton layoutX="350.0" layoutY="269.0" onAction="#btnUserReportOnAction" text="User Report" />
+      <JFXButton layoutX="336.0" layoutY="316.0" onAction="#btnEmployeeReportOnAction" text="Employee Report" />
+   </children>
 </AnchorPane>

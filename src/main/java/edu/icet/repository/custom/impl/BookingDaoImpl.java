@@ -27,7 +27,7 @@ public class BookingDaoImpl implements BookingDao {
                     entity.getCheckInDate(),
                     entity.getCheckInTime(),
                     entity.getDays(),
-                    entity.getCheckInOut(),
+                    entity.getCheckOutDate(),
                     entity.getGuestCount(),
                     entity.getTotalAmount(),
                     entity.getReservationStatus()
@@ -78,7 +78,7 @@ public class BookingDaoImpl implements BookingDao {
 
     @Override
     public boolean update(BookingEntity entity) {
-        String SQL = "UPDATE sbooking SET  user_id=? , guest_id=?,room_number =? ,check_in_date= ?,check_in_time=?,days=?,check_out_date=?,guest_count=?,total_amount=?reservation_status=? WHERE booking_id=? ";
+        String SQL = "UPDATE booking SET  user_id=? , guest_id=?,room_number =? ,check_in_date= ?,check_in_time=?,days=?,check_out_date=?,guest_count=?,total_amount=?reservation_status=? WHERE booking_id=? ";
         try {
             return CrudUtil.execute(SQL,
                     entity.getUserId(),
@@ -87,7 +87,7 @@ public class BookingDaoImpl implements BookingDao {
                     entity.getCheckInDate(),
                     entity.getCheckInTime(),
                     entity.getDays(),
-                    entity.getCheckInOut(),
+                    entity.getCheckOutDate(),
                     entity.getGuestCount(),
                     entity.getTotalAmount(),
                     entity.getReservationStatus(),

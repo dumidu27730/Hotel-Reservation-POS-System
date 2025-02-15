@@ -22,7 +22,7 @@
             <Font name="Segoe UI" size="12.0" />
          </font>
       </JFXButton>
-      <TableView fx:id="tblRooms" layoutX="15.0" layoutY="146.0" prefHeight="340.0" prefWidth="1004.0">
+      <TableView fx:id="tblBookings" layoutX="15.0" layoutY="146.0" prefHeight="340.0" prefWidth="1004.0">
          <columns>
             <TableColumn fx:id="colBookingId" prefWidth="69.0" text="Booking ID" />
             <TableColumn fx:id="colUserId" prefWidth="49.0" text="User ID" />

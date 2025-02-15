@@ -20,23 +20,21 @@ public class Booking {
     private LocalDate checkInDate;
     private String checkInTime;
     private Integer days;
-    private LocalDate checkInOut;
+    private LocalDate checkOutDate;
     private Integer guestCount;
     private Float totalAmount;
     private String reservationStatus;
 
-    public Booking(Integer userId, Integer guestId, String roomNumber, LocalDate checkInDate, String checkInTime, Integer days, LocalDate checkInOut, Integer guestCount, Float totalAmount, String reservationStatus) {
+    public Booking(Integer userId, Integer guestId, String roomNumber, LocalDate checkInDate, String checkInTime, Integer days, LocalDate checkOutDate, Integer guestCount, Float totalAmount, String reservationStatus) {
         this.userId = userId;
         this.guestId = guestId;
         this.roomNumber = roomNumber;
         this.checkInDate = checkInDate;
         this.checkInTime = checkInTime;
         this.days = days;
-        this.checkInOut = checkInOut;
+        this.checkOutDate = checkOutDate;
         this.guestCount = guestCount;
         this.totalAmount = totalAmount;
         this.reservationStatus = reservationStatus;
     }
-
-
 }

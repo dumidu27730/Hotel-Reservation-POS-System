@@ -5,36 +5,46 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="417.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.user.AddNewUserFormController">
+<AnchorPane prefHeight="505.0" prefWidth="467.0" style="-fx-background-color: #8e44ad;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.user.AddNewUserFormController">
    <children>
-      <JFXButton layoutX="93.0" layoutY="359.0" onAction="#btncancelOnAction" style="-fx-background-color: #8e44ad;" text="Cancel" textFill="WHITE">
+      <Pane layoutX="24.0" layoutY="39.0" prefHeight="442.0" prefWidth="420.0" style="-fx-background-color: ffffff;">
+         <children>
+            <Text layoutX="56.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position" />
+            <Text layoutX="65.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+            <Text layoutX="41.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC Number" />
+            <Text layoutX="60.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text layoutX="54.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+            <Text layoutX="39.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number " />
+            <Text layoutX="53.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+            <Text layoutX="33.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password" wrappingWidth="95.66015625" />
+            <ComboBox fx:id="cmbPosition" layoutX="162.0" layoutY="27.0" prefWidth="150.0" />
+            <TextField fx:id="txtName" layoutX="163.0" layoutY="74.0" />
+            <TextField fx:id="txtNICNumber" layoutX="163.0" layoutY="116.0" />
+            <TextField fx:id="txtEmail" layoutX="163.0" layoutY="162.0" />
+            <TextField fx:id="txtUsername" layoutX="163.0" layoutY="209.0" />
+            <TextField fx:id="txtPhoneNumber" layoutX="163.0" layoutY="253.0" />
+            <PasswordField fx:id="txtPassword" layoutX="163.0" layoutY="297.0" />
+            <PasswordField fx:id="txtConfirmPassword" layoutX="163.0" layoutY="343.0" />
+            <JFXButton layoutX="27.0" layoutY="396.0" onAction="#btncancelOnAction" style="-fx-background-color: #8e44ad;" text="Cancel" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="346.0" layoutY="396.0" onAction="#btnSaveOnAction" style="-fx-background-color: #8e44ad;" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Text fill="WHITE" layoutX="14.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Register" wrappingWidth="182.66015625">
          <font>
-            <Font name="Segoe UI" size="12.0" />
+            <Font name="System Bold" size="23.0" />
          </font>
-      </JFXButton>
-      <JFXButton layoutX="284.0" layoutY="359.0" onAction="#btnSaveOnAction" style="-fx-background-color: #8e44ad;" text="Save" textFill="WHITE">
-         <font>
-            <Font name="Segoe UI" size="12.0" />
-         </font>
-      </JFXButton>
-      <TextField fx:id="txtName" layoutX="134.0" layoutY="63.0" />
-      <TextField fx:id="txtNICNumber" layoutX="135.0" layoutY="102.0" />
-      <TextField fx:id="txtEmail" layoutX="135.0" layoutY="146.0" />
-      <TextField fx:id="txtUsername" layoutX="135.0" layoutY="188.0" />
-      <PasswordField fx:id="txtPassword" layoutX="134.0" layoutY="265.0" />
-      <PasswordField fx:id="txtConfirmPassword" layoutX="135.0" layoutY="309.0" />
-      <Text layoutX="60.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-      <Text layoutX="43.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC Number" />
-      <Text layoutX="51.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-      <Text layoutX="39.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
-      <Text layoutX="41.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-      <Text layoutX="28.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password" />
-      <ComboBox fx:id="cmbPosition" layoutX="134.0" layoutY="24.0" prefWidth="150.0" />
-      <Text layoutX="55.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position" />
-      <TextField fx:id="txtPhoneNumber" layoutX="134.0" layoutY="225.0" />
-      <Text layoutX="37.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number " />
+      </Text>
    </children>
 </AnchorPane>

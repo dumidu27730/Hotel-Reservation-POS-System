@@ -1,5 +1,7 @@
 package edu.icet.controller;
 
+import edu.icet.controller.booking.AddNewBookingFormController;
+import edu.icet.dto.User;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -38,6 +40,7 @@ public class HomeFormController implements Initializable {
     @FXML
     private AnchorPane loadFormContent;
 
+
     @FXML
     void btnShowUserFormOnAction(ActionEvent event) throws IOException {
         URL resource = this.getClass().getResource("../../../view/user/user_form.fxml");
@@ -50,6 +53,7 @@ public class HomeFormController implements Initializable {
     }
 
     public void btnShowBookingFormOnAction(ActionEvent actionEvent) throws IOException {
+
         URL resource = this.getClass().getResource("../../../view/booking/booking_form.fxml");
 
         assert  resource!=null;
@@ -129,27 +133,59 @@ public class HomeFormController implements Initializable {
                }
            }
     }
-
     private void loadDateAndTime() {
+        // Display date with month in English (e.g., 15 February 2025)
+        SimpleDateFormat f = new SimpleDateFormat("MMMM dd, yyyy", java.util.Locale.ENGLISH);
         Date date = new Date();
-        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
         lblDate.setText(f.format(date));
 
+        // Display time in HH:mm:ss format
         Timeline time = new Timeline(new KeyFrame(Duration.ZERO, e -> {
             LocalTime cTime = LocalTime.now();
             lblTime.setText(
-                    cTime.getHour() + ":" + cTime.getMinute() + ":" + cTime.getSecond()
+                    String.format("%02d:%02d:%02d",
+                            cTime.getHour(),
+                            cTime.getMinute(),
+                            cTime.getSecond())
             );
         }),
                 new KeyFrame(Duration.seconds(1))
         );
         time.setCycleCount(Animation.INDEFINITE);
         time.play();
-
     }
+
+//    private void loadDateAndTime() {
+//        Date date = new Date();
+//
+//        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+//        lblDate.setText(f.format(date));
+//
+//        Timeline time = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+//            LocalTime cTime = LocalTime.now();
+//            lblTime.setText(
+//                    cTime.getHour() + ":" + cTime.getMinute() + ":" + cTime.getSecond()
+//            );
+//        }),
+//                new KeyFrame(Duration.seconds(1))
+//        );
+//        time.setCycleCount(Animation.INDEFINITE);
+//        time.play();
+//
+//    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadDateAndTime();
+
     }
+    public void getUserId(User user) {
+        if (lblUserId != null) {
+            lblUserId.setText(String.valueOf(user.getId()));
+        } else {
+            System.out.println("lblUserId is null! Check FXML binding.");
+        }
+
+    }
+
 }
