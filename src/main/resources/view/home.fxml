@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPaneHome" prefHeight="619.0" prefWidth="1331.0" style="-fx-background-color: F4ECF7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.HomeFormController">
+<AnchorPane fx:id="anchorPaneHome" prefHeight="619.0" prefWidth="1331.0" style="-fx-background-color: F4ECF7;" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.HomeFormController">
    <children>
       <AnchorPane fx:id="loadFormContent" layoutX="211.0" layoutY="49.0" prefHeight="550.0" prefWidth="1100.0" />
       <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#8e44ad" height="635.0" layoutX="-15.0" smooth="false" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" width="204.0" />

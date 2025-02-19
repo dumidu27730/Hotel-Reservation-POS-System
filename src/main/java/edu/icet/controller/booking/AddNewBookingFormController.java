@@ -166,12 +166,16 @@ public class AddNewBookingFormController implements Initializable {
     }
 
     public void setCheckInTime(String time) {
+        System.out.println(time);
         txtCheckInTime.setText(time);
     }
 
     public void setUserId(String userId) {
+
         txtUserId.setText(userId);
     }
+
+
 
     @FXML
     void btnAddBookingOnAction(ActionEvent event) {

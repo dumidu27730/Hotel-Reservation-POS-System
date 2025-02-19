@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="550.0" prefWidth="1100.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.booking.BookingFormController">
+<AnchorPane prefHeight="550.0" prefWidth="1100.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.booking.BookingFormController">
    <children>
       <JFXButton layoutX="885.0" layoutY="14.0" onAction="#btnCreateNewBookingOnAction" style="-fx-background-color: #8e44ad;" text="+ Create New Booking" textFill="WHITE" />
       <TextField fx:id="txtSerchByRoomNo" layoutX="602.0" layoutY="14.0" prefHeight="25.0" prefWidth="212.0" promptText="Search here...." />

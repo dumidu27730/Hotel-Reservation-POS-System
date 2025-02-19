@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="541.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.room.AddNewRoomFormController">
+<AnchorPane prefHeight="400.0" prefWidth="541.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.room.AddNewRoomFormController">
    <children>
       <TextField fx:id="txtRoomNumber" layoutX="65.0" layoutY="109.0" prefHeight="25.0" prefWidth="78.0" />
       <Text layoutX="65.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Number" />

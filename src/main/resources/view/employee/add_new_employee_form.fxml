@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="447.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.employee.AddNewEmployeeFormController">
+<AnchorPane prefHeight="400.0" prefWidth="447.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.controller.employee.AddNewEmployeeFormController">
    <children>
       <TextField fx:id="txtJobRole" layoutX="189.0" layoutY="42.0" />
       <Text layoutX="109.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Job Role" />

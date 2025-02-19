@@ -142,7 +142,10 @@ public class LoginFormController implements Initializable {
     }
 
 
-    public void textForgotPasswordOnMouseClicked(MouseEvent mouseEvent)  {
+    public void textForgotPasswordOnMouseClicked(MouseEvent mouseEvent) throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../../../view/forgot_password_form.fxml"))));
+        stage.show();
 
     }
 

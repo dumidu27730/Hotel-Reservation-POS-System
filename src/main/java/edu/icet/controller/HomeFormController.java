@@ -54,6 +54,7 @@ public class HomeFormController implements Initializable {
 
     public void btnShowBookingFormOnAction(ActionEvent actionEvent) throws IOException {
 
+
         URL resource = this.getClass().getResource("../../../view/booking/booking_form.fxml");
 
         assert  resource!=null;
@@ -61,6 +62,22 @@ public class HomeFormController implements Initializable {
         Parent load = FXMLLoader.load(resource);
         this.loadFormContent.getChildren().clear();
         this.loadFormContent.getChildren().add(load);
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../view/booking/booking_form.fxml"));
+//        Parent load = loader.load();
+//
+//        // Check if the controller is actually AddNewBookingFormController
+//        Object controller = loader.getController();
+//        if (controller instanceof AddNewBookingFormController) {
+//            AddNewBookingFormController addNewBookingController = (AddNewBookingFormController) controller;
+//            addNewBookingController.setCheckInTime(lblTime.getText());
+//            System.out.println(lblTime.getText());
+//            addNewBookingController.setUserId(lblUserId.getText());
+//        } else {
+//            System.err.println("Invalid controller type for booking_form.fxml");
+//        }
+//
+//        loadFormContent.getChildren().clear();
+//        loadFormContent.getChildren().add(load);
     }
 
     public void btnShowRoomFormOnAction(ActionEvent actionEvent) throws IOException {
@@ -155,24 +172,7 @@ public class HomeFormController implements Initializable {
         time.play();
     }
 
-//    private void loadDateAndTime() {
-//        Date date = new Date();
-//
-//        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
-//        lblDate.setText(f.format(date));
-//
-//        Timeline time = new Timeline(new KeyFrame(Duration.ZERO, e -> {
-//            LocalTime cTime = LocalTime.now();
-//            lblTime.setText(
-//                    cTime.getHour() + ":" + cTime.getMinute() + ":" + cTime.getSecond()
-//            );
-//        }),
-//                new KeyFrame(Duration.seconds(1))
-//        );
-//        time.setCycleCount(Animation.INDEFINITE);
-//        time.play();
-//
-//    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
