@@ -15,7 +15,7 @@ public class ReportFormController {
     @FXML
     void btnBookingReportOnAction(ActionEvent event) {
         try {
-            JasperDesign design = JRXmlLoader.load("");
+            JasperDesign design = JRXmlLoader.load("src/main/resources/business_reports/Booking_List_Report.jrxml");
             JasperReport jasperReport = JasperCompileManager.compileReport(design);
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
@@ -32,7 +32,7 @@ public class ReportFormController {
     @FXML
     void btnEmployeeReportOnAction(ActionEvent event) {
         try {
-            JasperDesign design = JRXmlLoader.load("");
+            JasperDesign design = JRXmlLoader.load("src/main/resources/business_reports/Employee_List_Report.jrxml");
             JasperReport jasperReport = JasperCompileManager.compileReport(design);
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
@@ -64,7 +64,7 @@ public class ReportFormController {
     @FXML
     void btnRoomReportOnAction(ActionEvent event) {
         try {
-            JasperDesign design = JRXmlLoader.load("");
+            JasperDesign design = JRXmlLoader.load("src/main/resources/business_reports/Room_List_Report.jrxml");
             JasperReport jasperReport = JasperCompileManager.compileReport(design);
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
@@ -80,7 +80,7 @@ public class ReportFormController {
     @FXML
     void btnUserReportOnAction(ActionEvent event) {
         try {
-            JasperDesign design = JRXmlLoader.load("");
+            JasperDesign design = JRXmlLoader.load("src/main/resources/business_reports/User_List_Report.jrxml");
             JasperReport jasperReport = JasperCompileManager.compileReport(design);
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
