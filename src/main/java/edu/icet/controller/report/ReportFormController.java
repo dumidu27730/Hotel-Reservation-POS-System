@@ -14,7 +14,18 @@ public class ReportFormController {
 
     @FXML
     void btnBookingReportOnAction(ActionEvent event) {
+        try {
+            JasperDesign design = JRXmlLoader.load("");
+            JasperReport jasperReport = JasperCompileManager.compileReport(design);
 
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
+            JasperExportManager.exportReportToPdfFile(jasperPrint,"employee.pdf");
+
+            JasperViewer.viewReport(jasperPrint,false);
+
+        } catch (JRException | SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
@@ -52,12 +63,34 @@ public class ReportFormController {
 
     @FXML
     void btnRoomReportOnAction(ActionEvent event) {
+        try {
+            JasperDesign design = JRXmlLoader.load("");
+            JasperReport jasperReport = JasperCompileManager.compileReport(design);
 
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
+            JasperExportManager.exportReportToPdfFile(jasperPrint,"employee.pdf");
+
+            JasperViewer.viewReport(jasperPrint,false);
+
+        } catch (JRException | SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
     void btnUserReportOnAction(ActionEvent event) {
+        try {
+            JasperDesign design = JRXmlLoader.load("");
+            JasperReport jasperReport = JasperCompileManager.compileReport(design);
 
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
+            JasperExportManager.exportReportToPdfFile(jasperPrint,"employee.pdf");
+
+            JasperViewer.viewReport(jasperPrint,false);
+
+        } catch (JRException | SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
