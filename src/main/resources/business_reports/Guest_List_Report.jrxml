@@ -1,0 +1,165 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="Guest_Report" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="87e08930-a596-471a-a047-84cf8b9c99a6">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="hotel"/>
+	<query language="SQL"><![CDATA[SELECT * FROM guests]]></query>
+	<field name="guest_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="guest_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="guest_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="guests"/>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="guests"/>
+	</field>
+	<field name="nic_number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nic_number"/>
+		<property name="com.jaspersoft.studio.field.label" value="nic_number"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="guests"/>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="address"/>
+		<property name="com.jaspersoft.studio.field.label" value="address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="guests"/>
+	</field>
+	<field name="guest_request" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="guest_request"/>
+		<property name="com.jaspersoft.studio.field.label" value="guest_request"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="guests"/>
+	</field>
+	<field name="email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="email"/>
+		<property name="com.jaspersoft.studio.field.label" value="email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="guests"/>
+	</field>
+	<field name="phone_number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="phone_number"/>
+		<property name="com.jaspersoft.studio.field.label" value="phone_number"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="guests"/>
+	</field>
+	<field name="loyalty_points" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="loyalty_points"/>
+		<property name="com.jaspersoft.studio.field.label" value="loyalty_points"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="guests"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="115" splitType="Stretch">
+		<element kind="staticText" uuid="a3af3d32-d193-4241-aa24-7472824a0cf3" x="0" y="90" width="180" height="25" fontSize="16.0" bold="true">
+			<text><![CDATA[Guests Report 2025]]></text>
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+		<element kind="line" uuid="e17055ca-cacb-4664-b24a-2f8489a859dc" x="0" y="80" width="556" height="1">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+		<element kind="staticText" uuid="6a7795fa-dccf-42ec-af38-10824e88f867" x="95" y="0" width="210" height="25" fontSize="19.0" bold="true">
+			<text><![CDATA[Be Happy Hotel]]></text>
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+		<element kind="staticText" uuid="ed9cddf3-3469-42a5-84e2-912e6e176e82" x="95" y="55" width="205" height="15">
+			<text><![CDATA[091-4578523,behappyhotel@gmail.com]]></text>
+		</element>
+		<element kind="staticText" uuid="b6921bd4-046a-4dbd-9ef2-32366013a0cf" x="95" y="25" width="205" height="15">
+			<text><![CDATA[Nagahathanna Street,No 225]]></text>
+		</element>
+		<element kind="staticText" uuid="b15faac7-fce5-449f-b068-9e36e96fbc81" x="95" y="40" width="205" height="15">
+			<text><![CDATA[Colombo,Zip Code:00100]]></text>
+		</element>
+		<element kind="image" uuid="1d1c3f00-69d3-4e82-9ee8-8cb8f35ab3fe" x="0" y="0" width="84" height="70" forecolor="#080606" backcolor="#0A090A" scaleImage="RetainShape" evaluationTime="Page" linkType="None" linkTarget="Self" printRepeatedValues="false">
+			<expression><![CDATA["D:/to-website-usefull-beautifull-image/Screenshot 2025-02-20 154307.png"]]></expression>
+		</element>
+		<element kind="textField" uuid="10bde1b4-1963-483d-88c2-3ab68116e535" x="459" y="7" width="85" height="18" pattern="MMMMM dd, yyyy">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+		<element kind="textField" uuid="3c0e4d19-83d2-4d51-aa83-ad37d57582c3" x="460" y="30" width="74" height="35" pattern="HH:mm">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+		<element kind="staticText" uuid="58d2a899-b3f9-4507-9379-82f47b06a0d5" x="423" y="7" width="37" height="27" fontSize="11.0" bold="true">
+			<text><![CDATA[Date  :]]></text>
+		</element>
+		<element kind="staticText" uuid="95f3aa7f-7b95-4cde-a818-76c28a53d5a5" x="423" y="30" width="41" height="30" fontSize="12.0" bold="true">
+			<text><![CDATA[Time :]]></text>
+		</element>
+	</title>
+	<pageHeader height="14" splitType="Stretch"/>
+	<columnHeader height="39" splitType="Stretch">
+		<element kind="staticText" uuid="2efee73e-22e3-4f31-b0fc-0a2e3c20a624" x="0" y="0" width="40" height="30" fontSize="13.0" bold="true">
+			<text><![CDATA[ID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f6251546-f434-4698-892c-62b6219ad593"/>
+		</element>
+		<element kind="staticText" uuid="b402e108-5418-44ea-b020-d71c4b8c1be6" x="40" y="0" width="70" height="30" fontSize="13.0" bold="true">
+			<text><![CDATA[Name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cd50b018-48eb-47e5-8b7e-61d2770ca4ec"/>
+		</element>
+		<element kind="staticText" uuid="5d2d107d-0605-40fb-a07d-0e527fe1ba9e" x="110" y="0" width="77" height="30" fontSize="13.0" bold="true">
+			<text><![CDATA[NIC Num]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c859db50-07f8-4b80-aa31-920d54f63b03"/>
+		</element>
+		<element kind="staticText" uuid="02f69d83-8dcb-4404-bdec-bc559ea46a49" x="187" y="0" width="73" height="30" fontSize="13.0" bold="true">
+			<text><![CDATA[Address]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a200601c-96d1-429c-a5fd-48e1b8833409"/>
+		</element>
+		<element kind="staticText" uuid="88920f4f-14df-42ca-8bef-9d91d8aeed2f" x="260" y="0" width="80" height="30" fontSize="13.0" bold="true">
+			<text><![CDATA[Guest Req]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1f64ce97-4ffe-4192-b461-f80a53d1e994"/>
+		</element>
+		<element kind="staticText" uuid="ddfdaf2c-1e91-47f7-ad3b-28ad959438ef" x="340" y="0" width="69" height="30" fontSize="13.0" bold="true">
+			<text><![CDATA[Email]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="75543470-724f-4aa1-9c62-3dd179c0033c"/>
+		</element>
+		<element kind="staticText" uuid="5516e779-3e61-4475-a279-0a46d24d953e" x="410" y="0" width="80" height="30" fontSize="13.0" bold="true">
+			<text><![CDATA[Phone Num]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8982ca7b-280b-4fd9-bd2a-7d6b0a7fbbae"/>
+		</element>
+		<element kind="staticText" uuid="a58eafb9-35ff-40b6-8236-fd89fc3b9563" x="490" y="0" width="66" height="30" fontSize="13.0" bold="true">
+			<text><![CDATA[  Points]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="07c7e526-433c-4ec7-bf79-a32c08e87d16"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<element kind="textField" uuid="830e3761-4eb5-4879-8e18-6f688613c352" x="0" y="0" width="40" height="30">
+				<expression><![CDATA[$F{guest_id}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f6251546-f434-4698-892c-62b6219ad593"/>
+			</element>
+			<element kind="textField" uuid="86d2c291-3ef3-403a-84b9-25596b55683e" x="40" y="0" width="70" height="30">
+				<expression><![CDATA[$F{name}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cd50b018-48eb-47e5-8b7e-61d2770ca4ec"/>
+			</element>
+			<element kind="textField" uuid="9357b483-52d3-457a-943c-525951b3fc0a" x="110" y="0" width="77" height="30">
+				<expression><![CDATA[$F{nic_number}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c859db50-07f8-4b80-aa31-920d54f63b03"/>
+			</element>
+			<element kind="textField" uuid="cde807b0-12a0-4a32-beec-b6e6bbc9f2d3" x="187" y="0" width="72" height="30" hTextAlign="Left" vTextAlign="Top">
+				<expression><![CDATA[$F{address}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a200601c-96d1-429c-a5fd-48e1b8833409"/>
+			</element>
+			<element kind="textField" uuid="3690ef0c-439e-41e6-8d17-678733bdaa9c" x="260" y="0" width="80" height="30">
+				<expression><![CDATA[$F{guest_request}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1f64ce97-4ffe-4192-b461-f80a53d1e994"/>
+			</element>
+			<element kind="textField" uuid="97ca8e4b-081d-41ad-b919-f3c0255f214b" x="340" y="0" width="69" height="30">
+				<expression><![CDATA[$F{email}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="75543470-724f-4aa1-9c62-3dd179c0033c"/>
+			</element>
+			<element kind="textField" uuid="90c142a3-2140-480d-b0c4-7ef96818379a" x="409" y="0" width="81" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{phone_number}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8982ca7b-280b-4fd9-bd2a-7d6b0a7fbbae"/>
+			</element>
+			<element kind="textField" uuid="8b471206-ac34-4c19-8ca0-c1333e1f4baf" x="490" y="0" width="66" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{loyalty_points}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="07c7e526-433c-4ec7-bf79-a32c08e87d16"/>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch">
+		<element kind="staticText" uuid="4134249d-289a-443b-97c5-473177f9aaf6" positionType="Float" mode="Opaque" x="0" y="14" width="556" height="30" backcolor="#E6E8E9" fontName="Serif" fontSize="9.0" italic="true" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[.........THANK  YOU.........]]></text>
+		</element>
+	</pageFooter>
+	<summary height="143" splitType="Stretch"/>
+</jasperReport>

@@ -20,7 +20,6 @@ public class ReportFormController {
 
     @FXML
     void btnEmployeeReportOnAction(ActionEvent event) {
-       // src/main/resources/business_reports/employee_A4.jrxml
         try {
             JasperDesign design = JRXmlLoader.load("");
             JasperReport jasperReport = JasperCompileManager.compileReport(design);
@@ -37,7 +36,18 @@ public class ReportFormController {
 
     @FXML
     void btnGuestReportOnAction(ActionEvent event) {
+        try {
+            JasperDesign design = JRXmlLoader.load("src/main/resources/business_reports/Guest_List_Report.jrxml");
+            JasperReport jasperReport = JasperCompileManager.compileReport(design);
 
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
+            JasperExportManager.exportReportToPdfFile(jasperPrint,"guest.pdf");
+
+            JasperViewer.viewReport(jasperPrint,false);
+
+        } catch (JRException | SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
