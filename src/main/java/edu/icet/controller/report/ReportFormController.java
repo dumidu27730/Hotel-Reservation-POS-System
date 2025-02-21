@@ -19,7 +19,7 @@ public class ReportFormController {
             JasperReport jasperReport = JasperCompileManager.compileReport(design);
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
-            JasperExportManager.exportReportToPdfFile(jasperPrint,"employee.pdf");
+            JasperExportManager.exportReportToPdfFile(jasperPrint,"booking.pdf");
 
             JasperViewer.viewReport(jasperPrint,false);
 
@@ -68,7 +68,7 @@ public class ReportFormController {
             JasperReport jasperReport = JasperCompileManager.compileReport(design);
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
-            JasperExportManager.exportReportToPdfFile(jasperPrint,"employee.pdf");
+            JasperExportManager.exportReportToPdfFile(jasperPrint,"room.pdf");
 
             JasperViewer.viewReport(jasperPrint,false);
 
@@ -84,7 +84,7 @@ public class ReportFormController {
             JasperReport jasperReport = JasperCompileManager.compileReport(design);
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
-            JasperExportManager.exportReportToPdfFile(jasperPrint,"employee.pdf");
+            JasperExportManager.exportReportToPdfFile(jasperPrint,"user.pdf");
 
             JasperViewer.viewReport(jasperPrint,false);
 
