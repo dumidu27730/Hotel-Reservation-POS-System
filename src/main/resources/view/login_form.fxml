@@ -4,6 +4,8 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -15,12 +17,12 @@
       <ComboBox fx:id="cmbPosition" layoutX="84.0" layoutY="135.0" opacity="0.51" prefHeight="25.0" prefWidth="151.0" promptText="Position" />
       <PasswordField fx:id="txtPassword" layoutX="84.0" layoutY="218.0" prefHeight="24.0" prefWidth="151.0" promptText="Password" />
       <TextField fx:id="txtUsername" layoutX="84.0" layoutY="179.0" prefHeight="25.0" prefWidth="151.0" promptText="Username" />
-      <Text fill="WHITE" layoutX="361.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Be Happy">
+      <Text fill="WHITE" layoutX="351.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Be Happy">
          <font>
             <Font size="52.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="406.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hotel">
+      <Text fill="WHITE" layoutX="402.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hotel">
          <font>
             <Font size="31.0" />
          </font>
@@ -31,5 +33,10 @@
          </font>
       </JFXButton>
       <Text layoutX="84.0" layoutY="279.0" onMouseClicked="#textForgotPasswordOnMouseClicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot password?" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="386.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../to-website-usefull-beautifull-image/hotel-logo-design-1.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

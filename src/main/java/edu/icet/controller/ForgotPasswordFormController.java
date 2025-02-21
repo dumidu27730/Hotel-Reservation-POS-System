@@ -27,9 +27,17 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ForgotPasswordFormController implements Initializable {
+
+    @FXML
+    public TextField txtOtp;
+    @FXML
+    public JFXButton btnOk;
+
+    private String verifiedotp;
 
     @FXML
     private JFXButton btnChangePassword;
@@ -169,5 +177,31 @@ public class ForgotPasswordFormController implements Initializable {
         setTextFieldLimit(txtOTPThree, 1);
         setTextFieldLimit(txtOTPFour, 1);
         setTextFieldLimit(txtOTPFive, 1);
+    }
+
+    @FXML
+    void btnOtpOnAction(ActionEvent event) {
+        if (Objects.equals(txtOtp.getText(), this.verifiedotp)){
+            new Alert(Alert.AlertType.INFORMATION, "Verified").show();
+            btnChangePassword.setDisable(false);
+        }else{
+            new Alert(Alert.AlertType.ERROR, "Invalid OTP").show();
+        }
+    }
+
+
+    @FXML
+    void btnVerifyOnAction(ActionEvent event){
+        String email = txtEmail.getText();
+        if (!email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid email").show();
+        }else {
+            String otp = new EmailOtp().sendOTP(txtEmail.getText());
+            this.verifiedotp = otp;
+            btnOk.setDisable(false);
+//        System.out.println(this.verifiedotp);
+        }
+
+
     }
 }

@@ -6,8 +6,8 @@ import java.util.Properties;
 import java.util.Random;
 
 public class EmailService {
-    private final String senderEmail = "your-email@gmail.com"; // Change to your email
-    private final String senderPassword = "emnf oznf sept ogpv"; // Use an App Password
+    private final String senderEmail = "mjd2003sachinthak@gmail.com"; // Change to your email
+    private final String senderPassword = "jfql vtir mrww rvar"; // Use an App Password
 
     public String generateOTP() {
         Random random = new Random();
